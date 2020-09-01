@@ -6,7 +6,11 @@
 
       <home-section /> <!-- HOME PAGE SECTION -->
 
+      <about-section /> <!-- ABOUT PAGE SECTION -->
+
     </home-main-bar> <!-- HOME MAIN BAR -->
+
+    <home-foot-bar /> <!-- HOME FOOTER BAR -->
 
   </div>
 </template>
@@ -21,7 +25,11 @@
 
       HomeMainBar: () => import('@/components/layouts/HomeMainBar'),
 
-      HomeSection: () => import('@/components/pages/HomeSection')
+      HomeSection: () => import('@/components/pages/HomeSection'),
+
+      AboutSection: () => import('@/components/pages/AboutSection'),
+
+      HomeFootBar: () => import('@/components/layouts/HomeFootBar')
       
     }
 
