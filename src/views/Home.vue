@@ -1,5 +1,17 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <home-nav-bar />
+    
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'home',
+
+    components: {
+      HomeNavBar: () => import('@/components/layouts/HomeNavBar')
+    }
+
+  }
+</script>
