@@ -3,13 +3,12 @@
 
     <v-app-bar
       app
-      color="teal"
+      color="white"
       flat
-      dark
       class="px-5"
     >
       <v-toolbar-title>
-        <v-img src="@/assets/logo.png" max-width="50px" />
+        <v-img src="@/assets/logo.png" max-width="150px" />
       </v-toolbar-title>
 
       <v-spacer />
@@ -36,13 +35,12 @@
           <v-icon small left>mdi-cellphone-dock</v-icon>
           <span class="mr-2">Contact</span>
         </v-btn>
-        <v-btn rounded outlined text>
+        <v-btn rounded depressed color="blue darken-4" dark>
           <v-icon small left>mdi-account-circle</v-icon>
           <span class="mr-2">Learn More</span>
         </v-btn>
       </div>
     </v-app-bar>
-
 
     <home-side-bar 
         :visible="drawer"
@@ -68,7 +66,8 @@
                     ["mdi-cube-outline", "Home", "#hero"],
                     ["mdi-information-outline", "About", "#about"],
                     ["mdi-folder-outline", "Services", "#services"],
-                    ["mdi-cellphone-dock", "Contact", "#contact"]
+                    ["mdi-cellphone-dock", "Contact", "#contact"],
+                    ["mdi-cellphone-dock", "Learn More", "#contact"]
                 ]
             }
         },
