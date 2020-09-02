@@ -2,6 +2,8 @@
 
   <div class="home">
 
+    <scroll-indicator /> <!-- SCROLL INDOCATOR LENGTH -->
+
     <home-nav-bar /> <!-- HOME NAVIGATION BAR -->
     
     <home-main-bar>
@@ -29,6 +31,8 @@
     name: 'home',
 
     components: {
+
+      ScrollIndicator: () => import('@/components/mixins/ScrollIndicator'),
 
       HomeNavBar: () => import('@/components/layouts/HomeNavBar'),
 
