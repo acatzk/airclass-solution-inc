@@ -35,7 +35,7 @@
           <v-icon small left>mdi-cellphone-dock</v-icon>
           <span class="mr-2">Contact</span>
         </v-btn>
-        <v-btn rounded depressed color="blue darken-4" dark>
+        <v-btn rounded depressed outlined text color="primary darken-1">
           <v-icon small left>mdi-account-circle</v-icon>
           <span class="mr-2">Register</span>
         </v-btn>
