@@ -1,11 +1,11 @@
 <template>
-  <v-footer dark padless>
-    <v-card flat tile class="secondary white--text text-center">
+  <v-footer padless>
+    <v-card flat tile class="text-center" color="white">
       <v-card-text>
         <v-btn
           v-for="(icon, i) in icons"
           :key="i"
-          class="mx-4 white--text"
+          class="mx-4 grey--text"
           :href="icon.link"
           target="_blank"
           icon
@@ -14,13 +14,13 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, a iste fugiat iusto dolore animi qui earum libero magnam officiis?
+      <v-card-text class="grey--text pt-0">
+        Learning English Language Through Video Calls. Putting Children First. Preparing children for success in life
       </v-card-text>
 
       <v-divider></v-divider>
 
-      <v-card-text class="white--text">
+      <v-card-text class="grey--text">
         {{ new Date().getFullYear() }} — <strong>Airclass Solution, Inc.</strong>
       </v-card-text>
     </v-card>
