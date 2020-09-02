@@ -25,7 +25,7 @@
   left:0;
   height: 4px;
   z-index: 999;
-  background-color: #20bf55;
-  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+  background-color: #eec0c6;
+  background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
 }
 </style>
