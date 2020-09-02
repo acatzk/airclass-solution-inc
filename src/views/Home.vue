@@ -12,6 +12,8 @@
 
       <service-section /> <!-- SERVICES PAGE SECTION -->
 
+      <contact-section /> <!-- CONTACT PAGE SECTION -->
+
     </home-main-bar> <!-- HOME MAIN BAR -->
 
     <scroll-to-top /> <!-- SCROLL TO TOP BUTTON -->
@@ -37,6 +39,8 @@
       AboutSection: () => import('@/components/pages/AboutSection'),
 
       ServiceSection: () => import('@/components/pages/ServiceSection'),
+
+      ContactSection: () => import('@/components/pages/ContactSection'),
 
       ScrollToTop: () => import('@/components/mixins/ScrollToTop'),
 
