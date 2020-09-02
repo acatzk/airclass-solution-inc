@@ -98,14 +98,7 @@
         videoId: "7Rh_lzWWP0w"
       }
     },
-    watch: {
-      dialog (value) {
-        if (!value) {
-          this.pause()
-        }
-      }
-    },
-
+    
     methods: {
       ready(event) {
         this.player = event.target;
@@ -115,12 +108,6 @@
       },
       change() {
         this.videoId = "another video id";
-      },
-      stop() {
-        this.player.stopVideo();
-      },
-      pause() {
-        this.player.pauseVideo();
       }
     }
 
