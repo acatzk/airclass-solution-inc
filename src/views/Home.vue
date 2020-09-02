@@ -1,5 +1,7 @@
 <template>
+
   <div class="home">
+
     <home-nav-bar /> <!-- HOME NAVIGATION BAR -->
     
     <home-main-bar>
@@ -10,9 +12,12 @@
 
     </home-main-bar> <!-- HOME MAIN BAR -->
 
+    <scroll-to-top /> <!-- SCROLL TO TOP BUTTON -->
+
     <home-foot-bar /> <!-- HOME FOOTER BAR -->
 
   </div>
+  
 </template>
 
 <script>
@@ -28,6 +33,8 @@
       HomeSection: () => import('@/components/pages/HomeSection'),
 
       AboutSection: () => import('@/components/pages/AboutSection'),
+
+      ScrollToTop: () => import('@/components/mixins/ScrollToTop'),
 
       HomeFootBar: () => import('@/components/layouts/HomeFootBar')
       
