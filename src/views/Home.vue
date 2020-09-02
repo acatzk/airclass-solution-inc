@@ -10,6 +10,8 @@
 
       <about-section /> <!-- ABOUT PAGE SECTION -->
 
+      <service-section /> <!-- SERVICES PAGE SECTION -->
+
     </home-main-bar> <!-- HOME MAIN BAR -->
 
     <scroll-to-top /> <!-- SCROLL TO TOP BUTTON -->
@@ -33,6 +35,8 @@
       HomeSection: () => import('@/components/pages/HomeSection'),
 
       AboutSection: () => import('@/components/pages/AboutSection'),
+
+      ServiceSection: () => import('@/components/pages/ServiceSection'),
 
       ScrollToTop: () => import('@/components/mixins/ScrollToTop'),
 
