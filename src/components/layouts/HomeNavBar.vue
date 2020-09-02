@@ -31,7 +31,7 @@
           <v-icon small left>mdi-folder-outline</v-icon>
           <span class="mr-2">Services</span>
         </v-btn>
-        <v-btn text @click="$vuetify.goTo('#services')" rounded>
+        <v-btn text @click="$vuetify.goTo('#contact')" rounded>
           <v-icon small left>mdi-cellphone-dock</v-icon>
           <span class="mr-2">Contact</span>
         </v-btn>
