@@ -8,7 +8,7 @@
         fixed
         bottom
         right
-        color="blue darken-2"
+        color="primary darken-1"
         @click="toTop"
       >
         <v-icon>mdi-arrow-up</v-icon>
