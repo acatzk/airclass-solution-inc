@@ -37,7 +37,7 @@
         </v-btn>
         <v-btn rounded depressed outlined text color="primary darken-1">
           <v-icon small left>mdi-account-circle</v-icon>
-          <span class="mr-2">Register</span>
+          <span class="mr-2">Sign In</span>
         </v-btn>
       </div>
     </v-app-bar>
