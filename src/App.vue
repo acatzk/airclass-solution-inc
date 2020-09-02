@@ -4,12 +4,4 @@
   </v-app>
 </template>
 
-<style lang="scss">
- @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
-
-.v-application {
-  font-family: "Poppins", sans-serif !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>
+<style lang="scss" src="@/assets/css/app.scss"></style>
