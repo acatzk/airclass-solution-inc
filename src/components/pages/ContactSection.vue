@@ -12,10 +12,10 @@
                 For more information, inqueries and concern
               </h3>
               <h3 class="font-weight-light mt-3">
-                <v-icon left>mdi-phone-outline</v-icon> Phone: 09153246565
+                <v-icon left>mdi-phone-outline</v-icon> 09153246565
               </h3>
               <h3 class="font-weight-light">
-                <v-icon left>mdi-email-outline</v-icon> Email: vicsolution@email.com
+                <v-icon left>mdi-email-outline</v-icon> vicsolution@email.com
               </h3>
             </v-col>
             <v-col cols="12" sm="7">
