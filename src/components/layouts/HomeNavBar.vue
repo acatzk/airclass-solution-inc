@@ -37,7 +37,7 @@
         </v-btn>
         <v-btn rounded depressed color="blue darken-4" dark>
           <v-icon small left>mdi-account-circle</v-icon>
-          <span class="mr-2">Learn More</span>
+          <span class="mr-2">Register</span>
         </v-btn>
       </div>
     </v-app-bar>
@@ -66,8 +66,7 @@
                     ["mdi-cube-outline", "Home", "#hero"],
                     ["mdi-information-outline", "About", "#about"],
                     ["mdi-folder-outline", "Services", "#services"],
-                    ["mdi-cellphone-dock", "Contact", "#contact"],
-                    ["mdi-cellphone-dock", "Learn More", "#contact"]
+                    ["mdi-cellphone-dock", "Contact", "#contact"]
                 ]
             }
         },

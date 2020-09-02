@@ -39,7 +39,7 @@
         <v-list-item>
             <v-btn rounded outlined text block large>
                 <v-icon medium left>mdi-account-circle</v-icon>
-                <span class="mr-2">Learn More</span>
+                <span class="mr-2">Register</span>
             </v-btn>
         </v-list-item>
       </v-list>
