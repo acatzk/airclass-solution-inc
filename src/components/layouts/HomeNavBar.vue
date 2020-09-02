@@ -20,24 +20,19 @@
       />
       <div v-else>
         <v-btn text @click="$vuetify.goTo('#hero')" rounded>
-          <v-icon small left>mdi-cube-outline</v-icon>
           <span class="mr-2">Home</span>
         </v-btn>
         <v-btn text @click="$vuetify.goTo('#about')" rounded>
-          <v-icon small left>mdi-information-outline</v-icon>
           <span class="mr-2">About</span>
         </v-btn>
         <v-btn text @click="$vuetify.goTo('#services')" rounded>
-          <v-icon small left>mdi-folder-outline</v-icon>
           <span class="mr-2">Services</span>
         </v-btn>
         <v-btn text @click="$vuetify.goTo('#contact')" rounded>
-          <v-icon small left>mdi-cellphone-dock</v-icon>
           <span class="mr-2">Contact</span>
         </v-btn>
         <v-btn rounded depressed outlined text color="primary darken-1">
-          <v-icon small left>mdi-account-circle</v-icon>
-          <span class="mr-2">Sign In</span>
+          <span>Sign In</span>
         </v-btn>
       </div>
     </v-app-bar>
