@@ -53,12 +53,12 @@
                     {
                         id: 0,
                         src: require('@/assets/img/icon2.svg'),
-                        description: "It has been their long dream to have their own company that completely benefits the hardworking individuals who strives to uplift the quality of their life and the community. Our goal is to help other's dream come to reality, especially those who are living in the remote areas and small villages. Big Cities are too congested with business and workers fighting the agony of being far away from home."
+                        description: "Our goal is to help other's dream come to reality, especially those who are living in the remote areas and small villages. Big Cities are too congested with business and workers fighting the agony of being far away from home."
                     },
                     {
                         id: 0,
                         src: require('@/assets/img/icon3.svg'),
-                        description: "May 28, 2020 we developed a challenging plan to start with company 'Victors Air Class Solutions' .The company's name is taken from the CEO's' name and Nicholas' daughter's name. We provide teaching tools to qualified and teachers and other professionals who has the love and desire to teach online while enjoying their time home with families. We are dedicated to make partnership and teaching support in English and other courses that can be done remotely in a case to case basis."
+                        description: "May 28, 2020 we developed a challenging plan to start with company 'Victors Air Class Solutions'. We provide teaching tools to qualified and teachers and other professionals who has the love and desire to teach online while enjoying their time home with families. We are dedicated to make partnership and teaching support in English and other courses that can be done remotely in a case to case basis."
                     }
                 ]
             }
