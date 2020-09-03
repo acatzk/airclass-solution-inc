@@ -10,6 +10,8 @@
 
       <home-section /> <!-- HOME PAGE SECTION -->
 
+      <goal-section /> <!-- GOAL PAGE SECTION -->
+
       <about-section /> <!-- ABOUT PAGE SECTION -->
 
       <service-section /> <!-- SERVICES PAGE SECTION -->
@@ -39,6 +41,8 @@
       HomeMainBar: () => import('@/components/layouts/HomeMainBar'),
 
       HomeSection: () => import('@/components/pages/HomeSection'),
+
+      GoalSection: () => import('@/components/pages/GoalSection'),
 
       AboutSection: () => import('@/components/pages/AboutSection'),
 
