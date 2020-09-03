@@ -40,7 +40,7 @@
 
 <style scoped>
 .hero-container {
-  min-height: 90vh !important;
+  min-height: 100vh !important;
   margin: 0 100px;
 }
 .side-hero-img {
