@@ -9,39 +9,40 @@
     >
       <v-toolbar-title>
         <v-img src="@/assets/logo.png" max-width="150px" />
-      </v-toolbar-title>
+      </v-toolbar-title> <!-- BUSINESS LOGO -->
 
       <v-spacer />
 
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
-        class="mr-4"
+        class="mr-1"
         v-if="isXs"
-      />
+      ></v-app-bar-nav-icon> <!-- HAMBURGER MENU -->
+
       <div v-else>
-        <v-btn text @click="$vuetify.goTo('#hero')" rounded>
-          <span class="mr-2">Home</span>
+        <v-btn 
+          text 
+           v-for="([text, link], i) in items"
+           :key="i"
+          @click="$vuetify.goTo(link)"
+        >
+          <span class="text-capitalize">{{ text }}</span>
         </v-btn>
-        <v-btn text @click="$vuetify.goTo('#about')" rounded>
-          <span class="mr-2">About</span>
+        <v-btn depressed text class="ml-10">
+          <span class="text-capitalize">Log In</span>
         </v-btn>
-        <v-btn text @click="$vuetify.goTo('#services')" rounded>
-          <span class="mr-2">Services</span>
+        <v-btn depressed color="primary">
+          <span class="text-capitalize">Sign Up</span>
         </v-btn>
-        <v-btn text @click="$vuetify.goTo('#contact')" rounded>
-          <span class="mr-2">Contact</span>
-        </v-btn>
-        <v-btn rounded depressed outlined text color="primary darken-1">
-          <span>Sign In</span>
-        </v-btn>
-      </div>
+      </div> <!-- NAVIGATION LINKS -->
+
     </v-app-bar>
 
     <home-side-bar 
         :visible="drawer"
         :items="items"
         @close="drawer = false"
-    />
+    /> <!-- SIDE NAVIGATION BAR LINKS -->
 
   </div>
 </template>
@@ -58,10 +59,10 @@
                 drawer: false,
                 isXs: false,
                 items: [
-                    ["mdi-cube-outline", "Home", "#hero"],
-                    ["mdi-information-outline", "About", "#about"],
-                    ["mdi-folder-outline", "Services", "#services"],
-                    ["mdi-cellphone-dock", "Contact", "#contact"]
+                    ["Home", "#hero"],
+                    ["About", "#about"],
+                    ["Services", "#services"],
+                    ["Contact", "#contact"]
                 ]
             }
         },
