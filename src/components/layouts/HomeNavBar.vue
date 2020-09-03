@@ -61,6 +61,7 @@
                 items: [
                     ["Home", "#hero"],
                     ["About", "#about"],
+                    ["Download", "#download"],
                     ["Services", "#services"],
                     ["Contact", "#contact"]
                 ]
