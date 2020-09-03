@@ -12,7 +12,7 @@
 
       <goal-section /> <!-- GOAL PAGE SECTION -->
 
-      <english-video-section /> <!-- ENGLISH VIDEO PGE SECTION -->
+      <download-section /> <!-- PDF FREEDOWNLOAD BOOK SECTION -->
 
       <about-section /> <!-- ABOUT PAGE SECTION -->
 
@@ -46,7 +46,7 @@
 
       GoalSection: () => import('@/components/pages/GoalSection'),
 
-      EnglishVideoSection: () => import('@/components/pages/EnglishVideoSection'),
+      DownloadSection: () => import('@/components/pages/DownloadSection'),
 
       AboutSection: () => import('@/components/pages/AboutSection'),
 
