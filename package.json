@@ -11,6 +11,7 @@
     "@mdi/font": "^3.6.95",
     "core-js": "^3.6.5",
     "roboto-fontface": "*",
+    "v-video-embed": "^1.0.7",
     "vue": "^2.6.11",
     "vue-horizontal-list": "^1.0.12",
     "vue-router": "^3.2.0",
