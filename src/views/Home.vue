@@ -12,6 +12,8 @@
 
       <goal-section /> <!-- GOAL PAGE SECTION -->
 
+      <english-video-section /> <!-- ENGLISH VIDEO PGE SECTION -->
+
       <about-section /> <!-- ABOUT PAGE SECTION -->
 
       <service-section /> <!-- SERVICES PAGE SECTION -->
@@ -43,6 +45,8 @@
       HomeSection: () => import('@/components/pages/HomeSection'),
 
       GoalSection: () => import('@/components/pages/GoalSection'),
+
+      EnglishVideoSection: () => import('@/components/pages/EnglishVideoSection'),
 
       AboutSection: () => import('@/components/pages/AboutSection'),
 
