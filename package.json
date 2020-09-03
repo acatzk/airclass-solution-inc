@@ -15,7 +15,6 @@
     "vue": "^2.6.11",
     "vue-horizontal-list": "^1.0.12",
     "vue-router": "^3.2.0",
-    "vue-youtube-embed": "^2.2.2",
     "vuetify": "^2.2.11",
     "vuex": "^3.4.0"
   },
