@@ -5,7 +5,7 @@
         <v-row align="center" justify="center">
           <v-col cols="12" md="7" sm="12">
               <h1 class="display-2 font-weight-black pb-6" style="color: #313131;">Airclass Solution, Inc. </h1>
-              <p color="#313131">
+              <p class="grey--text">
                 Learning English Language Through Video Calls.
                 Putting Children First. Preparing children for success in life
               </p>
