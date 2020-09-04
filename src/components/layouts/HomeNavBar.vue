@@ -22,9 +22,9 @@
       <div v-else>
         <v-btn 
           text 
-           v-for="([text, link], i) in items"
-           :key="i"
-          @click="$vuetify.goTo(link)"
+          v-for="([text, link], i) in items"
+          :key="i"
+          @click="text === 'Contact' ? dialog = true  : $vuetify.goTo(link)"
         >
           <span class="text-capitalize">{{ text }}</span>
         </v-btn>
@@ -44,6 +44,12 @@
         @close="drawer = false"
     /> <!-- SIDE NAVIGATION BAR LINKS -->
 
+
+    <contact-modal 
+      :visible="dialog"
+      @close="dialog = false"
+    />
+
   </div>
 </template>
 
@@ -51,12 +57,14 @@
     export default {
 
         components: {
-            HomeSideBar: () => import('./HomeSideBar')
+            HomeSideBar: () => import('./HomeSideBar'),
+            ContactModal: () => import('@/components/pages/ContactModal')
         },
 
         data () {
             return {
                 drawer: false,
+                dialog: false,
                 isXs: false,
                 items: [
                     ["Home", "#hero"],
