@@ -8,7 +8,7 @@
       class="px-5"
     >
       <v-toolbar-title>
-        <v-img src="@/assets/logo.png" max-width="150px" />
+        <v-img src="@/assets/a.png" max-width="60px" />
       </v-toolbar-title> <!-- BUSINESS LOGO -->
 
       <v-spacer />

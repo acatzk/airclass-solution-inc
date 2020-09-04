@@ -11,7 +11,7 @@
       <v-list>
         <v-list-item>
           <v-list-item-avatar>
-            <img src="@/assets/logo.png" alt="Logo" />
+            <img src="@/assets/a.png" alt="Logo" />
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title class="title">Airclass Solution</v-list-item-title>
