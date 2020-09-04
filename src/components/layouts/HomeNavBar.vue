@@ -7,8 +7,9 @@
       flat
       class="px-5"
     >
-      <v-toolbar-title>
+      <v-toolbar-title class="d-flex">
         <v-img src="@/assets/a.png" max-width="60px" />
+        <span class="mt-4 ml-3 log-name">Airclass</span>
       </v-toolbar-title> <!-- BUSINESS LOGO -->
 
       <v-spacer />
@@ -77,7 +78,7 @@
         },
         methods: {
             onResize () {
-                this.isXs = window.innerWidth < 850;
+                this.isXs = window.innerWidth < 940;
             }
         },
         watch: {
@@ -99,11 +100,15 @@
 </script>
 
 <style scoped>
-    .v-toolbar {
-        transition: 0.6s;
-    }
-    .expand {
-        height: 80px !important;
-        padding-top: 10px;
-    }
+  .v-toolbar {
+      transition: 0.6s;
+  }
+  .expand {
+      height: 80px !important;
+      padding-top: 10px;
+  }
+  .log-name  {
+    font-weight: bold;
+    color: #0a0a3a;
+  }
 </style>
