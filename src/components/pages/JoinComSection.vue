@@ -16,22 +16,27 @@
                 <v-col cols="12" sm="3">
                     <v-text-field
                         label="Email Address"
-                        solo
-                        flat
                     ></v-text-field>
                 </v-col>
-                <v-btn 
-                    depressed 
-                    color="#171b34" 
-                    dark 
-                    large
-                    class="text-capitalize mb-7 font-weight-light"
-                >
-                    Join our community
-                </v-btn>
-                 <p class="description font-weight-light " style="font-size: 12px;">
-                    By clicking "Primary action" you accept Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facere dolorem nostrum, quasi molestiae maxime.
-                </p>
+                <v-col cols="12" sm="3" class="text-center">
+                    <v-btn 
+                        depressed 
+                        block
+                        color="#171b34" 
+                        dark 
+                        large
+                        class="text-capitalize font-weight-light"
+                    >
+                        Join our community
+                    </v-btn>
+                </v-col>
+            </v-row>
+            <v-row align="center" justify="center">
+                <v-col cols="12" sm="6" class="text-center">
+                    <p class="description font-weight-light">
+                        By clicking "Primary action" you accept Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores facere dolorem nostrum, quasi molestiae maxime.
+                    </p>
+                </v-col>
             </v-row>
         </v-form>
     </v-container>
@@ -44,8 +49,6 @@
   padding: 100px 0;
 }
 .description {
-    position: relative;
-    bottom: 30px;
-    margin: 0 390px;
+    font-size: 12px;
 }
 </style>
