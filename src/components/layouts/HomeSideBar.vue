@@ -27,7 +27,7 @@
           v-for="([text, link], i) in items"
           :key="i"
           link
-          @click="$vuetify.goTo(link)"
+          @click="text === 'Contact' ? dialog = true  : $vuetify.goTo(link)"
         >
           <v-list-item-content>
             <v-list-item-title class="subtitile-1 text-center">{{ text }}</v-list-item-title>
@@ -45,6 +45,12 @@
         </v-list-item>
       </v-list> <!-- SIDE NAVIGATION LINKS -->
 
+
+      <contact-modal 
+      :visible="dialog"
+      @close="dialog = false"
+    />
+
     </v-navigation-drawer> <!-- NAVIGATION DRAWER -->
 
 </template>
@@ -52,6 +58,16 @@
 <script>
     export default {
         name: 'home-side-bar',
+
+        data () {
+          return {
+            dialog: false
+          }
+        },
+
+        components: {
+          ContactModal: () => import('@/components/pages/ContactModal')
+        },
         
         props: ['items', 'visible'],
 
