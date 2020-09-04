@@ -10,13 +10,11 @@
 
       <home-section /> <!-- HOME PAGE SECTION -->
 
-      <goal-section /> <!-- GOAL PAGE SECTION -->
+      <service-section /> <!-- SERVICES PAGE SECTION -->
 
       <download-section /> <!-- PDF FREEDOWNLOAD BOOK SECTION -->
 
       <about-section /> <!-- ABOUT PAGE SECTION -->
-
-      <service-section /> <!-- SERVICES PAGE SECTION -->
 
       <contact-section /> <!-- CONTACT PAGE SECTION -->
 
@@ -43,8 +41,6 @@
       HomeMainBar: () => import('@/components/layouts/HomeMainBar'),
 
       HomeSection: () => import('@/components/pages/HomeSection'),
-
-      GoalSection: () => import('@/components/pages/GoalSection'),
 
       DownloadSection: () => import('@/components/pages/DownloadSection'),
 

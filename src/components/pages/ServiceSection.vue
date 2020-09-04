@@ -1,76 +1,76 @@
 <template>
-  <section id="services" class="mt-12">
-    <v-container fluid>
-        <v-row align="center" justify="center">
-            <v-col cols="12" class="text-center">
-                <h1 class="font-weight-light display-2">Services</h1>
-                <h1 class="font-weight-light">Intensive with enjoyable teaching trainning</h1>
-            </v-col>
-            <v-col cols="10">
-                <v-row align="center" justify="space-around">
-                    <v-col
+    <section id="services">
+        <v-layout>
+            <v-container>
+                <v-row class="goal-title">
+                    <v-col>
+                        <h1 
+                            class="font-weight-bold pb-3 text-center" 
+                            style="font-size: 1.8rem; color: #0a0a3a;"
+                        >Achieve your goals with Airclass Solution</h1>
+                        <p class="text-center grey--text">
+                            Intensive with enjoyable teaching trainning
+                        </p>
+                    </v-col>
+                </v-row>
+            </v-container>
+        </v-layout>
+
+        <v-layout>
+            <v-container>
+                <v-row class="mx-12">
+                    <v-col 
                         cols="12"
-                        sm="4"
-                        class="text-center"
-                        v-for="(service, i) in services"
-                        :key="i"
+                        md="4"
+                        sm=6
+                        v-for="([src, title, description], i) in goals" :key="i"
                     >
-                        <v-hover v-slot:default="{ hover }">
+                        <v-hover v-slot="{ hover }">
                             <v-card
-                                class="card"
-                                shaped
-                                :elevation="hover ? 10 : 4"
-                                :class="{ up: hover }"
+                                class="mx-auto"
+                                flat
+                                outlined
+                                :elevation="hover ? 8 : 0"
                             >
-                            <v-img
-                                :src="service.img"
-                                max-width="100px"
-                                class="d-block ml-auto mr-auto"
-                                :class="{ 'zoom-efect': hover }"
-                            ></v-img>
-                            <h1 class="font-weight-regular">{{ service.title }}</h1>
-                            <h4 class="font-weight-regular subtitle-1">
-                                {{ service.text }}
-                            </h4>
+                                <v-img
+                                    min-height="230px"
+                                    :src="src"
+                                >
+                                </v-img>
+
+                                <v-card-title class="text-center text-primary">{{ title }}</v-card-title>
+                                
+                                <v-card-text class="text--secondary text-center">
+                                    {{ description }}
+                                </v-card-text>
                             </v-card>
                         </v-hover>
                     </v-col>
                 </v-row>
-            </v-col>
-        </v-row>
-    </v-container>
-  </section>
+            </v-container>
+        </v-layout>
+
+    </section>
 </template>
+
 
 <script>
     export default {
-        name: 'service-section',
-
+        name: 'goal-section',
+        
         data () {
             return {
-                services: [
-                    {
-                        img: require("@/assets/img/icon2.png"),
-                        title: "English Learning",
-                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    },
-                    {
-                        img: require("@/assets/img/icon1.png"),
-                        title: "Secured Video Call",
-                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    },
-                    {
-                        img: require("@/assets/img/icon3.png"),
-                        title: "Cretive Trainning",
-                        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                    }
+                goals: [
+                    ['https://increasify.com.au/wp-content/uploads/2016/08/default-image.png', 'English Learning', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.'],
+                    ['https://increasify.com.au/wp-content/uploads/2016/08/default-image.png', 'Secured Video Call', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.'],
+                    ['https://increasify.com.au/wp-content/uploads/2016/08/default-image.png', 'Creative Trainning', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.']
                 ]
             }
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 #services {
     min-height: 100vh;
 }
