@@ -22,7 +22,7 @@
                 </v-col>
                 <v-btn 
                     depressed 
-                    color="indigo darken-3" 
+                    color="#171b34" 
                     dark 
                     large
                     class="text-capitalize mb-7 font-weight-light"
