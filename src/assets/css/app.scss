@@ -6,6 +6,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body, html {
+  font-family: "Poppins", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 ::-webkit-scrollbar {
   width: 12px; 
 }
