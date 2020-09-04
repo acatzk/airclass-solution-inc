@@ -31,9 +31,7 @@
                                 max-width="290"
                                 flat
                                 outlined
-                                :elevation="hover ? 7 : 0"
-                                shaped
-                                :class="{ up: hover }"
+                                :elevation="hover ? 8 : 0"
                             >
                                 <v-img
                                     height="230px"
