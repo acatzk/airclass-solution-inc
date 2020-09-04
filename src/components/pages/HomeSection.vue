@@ -20,7 +20,7 @@
               </v-btn>
               <v-btn 
                 fab 
-                @click="$vuetify.goTo('#goal')"
+                @click="$vuetify.goTo('#services')"
                 outlined
                 text
                 large
