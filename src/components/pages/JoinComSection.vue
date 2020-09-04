@@ -40,6 +40,11 @@
             </v-row>
         </v-form>
     </v-container>
+
+    <div class="svg-border-waves text-white">
+      <v-img src="~@/assets/img/borderWavesBlue.svg" />
+    </div>
+
   </section>
 </template>
 
@@ -50,5 +55,13 @@
 }
 .description {
     font-size: 12px;
+}
+.svg-border-waves .v-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  overflow: hidden;
 }
 </style>
