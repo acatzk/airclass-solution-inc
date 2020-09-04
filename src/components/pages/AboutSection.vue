@@ -35,34 +35,6 @@
   </section>
 </template>
 
-<script>
-    export default {
-        name: 'about-section',
-        
-        data () {
-            return {
-                details: [
-                    {
-                        id: 0,
-                        src: require('@/assets/img/icon1.svg'),
-                        description: 'A partnership of a two good friends Victor and Nicholas. An overseas workers, originally from the Philippines and the United States of America who met in the middle of war zone projects, working 7 days a week and 12-16 hours a day depends with the complexity of work to provide logistics and construction management support of NATO troops stationed in Middle East. '
-                    },
-                    {
-                        id: 0,
-                        src: require('@/assets/img/icon2.svg'),
-                        description: "Our goal is to help other's dream come to reality, especially those who are living in the remote areas and small villages. Big Cities are too congested with business and workers fighting the agony of being far away from home."
-                    },
-                    {
-                        id: 0,
-                        src: require('@/assets/img/icon3.svg'),
-                        description: "May 28, 2020 we developed a challenging plan to start with company 'Victors Air Class Solutions'. We provide teaching tools to qualified and teachers and other professionals who has the love and desire to teach online while enjoying their time home with families. We are dedicated to make partnership and teaching support in English and other courses that can be done remotely in a case to case basis."
-                    }
-                ]
-            }
-        }
-    }
-</script>
-
 <style scoped>
 #about {
   background-color: #f4f7f5;
