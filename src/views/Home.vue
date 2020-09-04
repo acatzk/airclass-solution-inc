@@ -17,6 +17,8 @@
       <about-section /> <!-- ABOUT PAGE SECTION -->
 
       <comfort-section /> <!-- COMFORT PAGE SECTION -->
+      
+      <testimony-section /> <!-- TESTIMONY CAROUSEL PAGE SECTION -->
 
       <contact-section /> <!-- CONTACT PAGE SECTION -->
 
@@ -53,6 +55,8 @@
       ContactSection: () => import('@/components/pages/ContactSection'),
 
       ComfortSection: () => import('@/components/pages/ComfortSection'),
+
+      TestimonySection: () => import('@/components/pages/TestimonySection'),
 
       ScrollToTop: () => import('@/components/mixins/ScrollToTop'),
 
