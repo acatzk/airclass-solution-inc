@@ -35,6 +35,7 @@
                                 <v-img
                                     min-height="230px"
                                     :src="src"
+                                    :lazy-src="src"
                                 >
                                 </v-img>
 
