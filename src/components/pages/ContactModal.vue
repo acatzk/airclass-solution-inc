@@ -31,32 +31,66 @@
                 </h3>
               </v-col>
               <v-col cols="12" sm="7">
-                <v-form ref="form">
+                <v-form 
+                  ref="form"
+                  v-model="valid"
+                  :lazy-validation="lazy"
+                  :disabled="loading"
+                >
                   <v-text-field
                     label="Name"
+                    :rules="[required('Name'), ]"
+                    ref="name"
+                    v-model="form.name"
                   ></v-text-field>
 
                   <v-text-field
                     label="E-mail"
+                    v-model="form.email"
+                    :rules="[required('Email'), emailRules('Email')]"
+                    ref="name"
                   ></v-text-field>
 
                   <v-text-field
                     label="Phone"
+                    v-model="form.phone"
+                    :rules="[required('Phone')]"
+                    ref="phone"
                   ></v-text-field>
 
                   <v-textarea
                     label="Message"
+                    v-model="form.message"
+                    :rules="[required('Message')]"
+                    ref="message"
                   />
 
-                  <v-btn
-                    color="primary"
-                    rounded
-                    block
-                    depressed
-                    class="mt-3"
-                  >
-                    Send
-                  </v-btn>
+                  <v-row>
+                    <v-col>
+                      <v-btn
+                        rounded
+                        outlined
+                        block
+                        depressed
+                        class="mt-3 grey--text"
+                        @click="onClickResetForm"
+                      >
+                        cancel
+                      </v-btn>
+                    </v-col>
+                    <v-col>
+                      <v-btn
+                        color="primary"
+                        rounded
+                        block
+                        depressed
+                        class="mt-3"
+                        @click="onClickSubmitForm"
+                      >
+                        Send
+                      </v-btn>
+                    </v-col>
+                  </v-row>
                 </v-form>
               </v-col>
             </v-row>
@@ -68,10 +102,36 @@
 </template>
 
 <script>
+
+  import { ADD_INBOX_MUTATION } from '@/graphql/mutations'
+
+  import { toastAlertStatus, required, emailRules } from '@/utils'
+
   export default {
     name: 'contact-modal',
 
     props: ['visible'],
+
+
+    data () {
+      return {
+        loading: false,
+        valid: true,
+        lazy: false,
+        form: {
+          name: null,
+          email: null,
+          phone: null,
+          message: null
+        },
+        required(propertyType) { 
+            return required(propertyType)
+        },
+        emailRules(propertyType) {
+            return emailRules(propertyType)
+        }
+      }
+    },
 
     computed: {
       show: {
@@ -84,21 +144,61 @@
           }
         }
       }
+    },
+
+
+    methods: {
+
+      onClickResetForm () {
+        this.form = {}
+        this.$refs.form.reset()
+      },
+
+      onClickSubmitForm () {
+
+        if (this.$refs.form.validate()) {
+          this.loading = true
+
+          const {
+            name,
+            email,
+            contact,
+            message
+          } = this.$data
+
+          this
+           .$apollo
+           .mutate({
+             mutation: ADD_INBOX_MUTATION,
+             variables : { name, email, contact, message }
+           })
+           .then(() => {
+              this.onClickResetForm()
+              toastAlertStatus('You message successfully sent', 'success')
+           })
+           .catch(error => {
+             toastAlertStatus(error, 'error')
+             this.loading = false
+           })
+
+        }
+
+      }
     }
 
   }
 </script>
 
 <style scoped>
-    #contact {
-        background-color: #f4f7f5;
-    }
-    .svg-border-waves .v-image {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 3rem;
-        width: 100%;
-        overflow: hidden;
-    }
+  #contact {
+      background-color: #f4f7f5;
+  }
+  .svg-border-waves .v-image {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3rem;
+      width: 100%;
+      overflow: hidden;
+  }
 </style>
