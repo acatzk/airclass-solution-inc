@@ -22,19 +22,18 @@
                     <v-col 
                         cols="12"
                         md="4"
-                        sm="12"
+                        sm=6
                         v-for="([src, title, description], i) in goals" :key="i"
                     >
                         <v-hover v-slot="{ hover }">
                             <v-card
                                 class="mx-auto"
-                                max-width="290"
                                 flat
                                 outlined
                                 :elevation="hover ? 8 : 0"
                             >
                                 <v-img
-                                    height="230px"
+                                    min-height="230px"
                                     :src="src"
                                 >
                                 </v-img>
