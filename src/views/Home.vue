@@ -16,6 +16,8 @@
 
       <about-section /> <!-- ABOUT PAGE SECTION -->
 
+      <comfort-section /> <!-- COMFORT PAGE SECTION -->
+
       <contact-section /> <!-- CONTACT PAGE SECTION -->
 
     </home-main-bar> <!-- HOME MAIN BAR -->
@@ -49,6 +51,8 @@
       ServiceSection: () => import('@/components/pages/ServiceSection'),
 
       ContactSection: () => import('@/components/pages/ContactSection'),
+
+      ComfortSection: () => import('@/components/pages/ComfortSection'),
 
       ScrollToTop: () => import('@/components/mixins/ScrollToTop'),
 
