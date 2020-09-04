@@ -1,7 +1,8 @@
 <template>
-  <v-dialog v-model="show" fullscreen hide-overlay transition="dialog-bottom-transition">
-    <v-card>
-      <v-toolbar flat>
+  <v-dialog v-model="show" transition="dialog-bottom-transition">
+    <v-card flat>
+      <v-container>
+        <v-toolbar flat>
           <v-spacer></v-spacer>
           <v-btn 
             icon 
@@ -12,7 +13,6 @@
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-toolbar>
-      <v-container fluid>
         <v-row align="center" justify="center">
           <v-col cols="10">
             <v-row justify="center">
