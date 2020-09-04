@@ -29,8 +29,12 @@
                 <v-icon>mdi-arrow-down</v-icon>
               </v-btn>
           </v-col>
-          <v-col cols="12" md="5" class="hidden-sm-and-down">
-            <img src="@/assets/img/herosvg.svg" alt="hero" class="side-hero-img">
+          <v-col cols="12" md="5" class="d-none d-md-flex">
+            <img 
+              src="@/assets/img/herosvg.svg" 
+              alt="hero" 
+              class="side-hero-img d-block ml-auto mr-auto"
+            >
           </v-col>
         </v-row>
       </v-layout>
