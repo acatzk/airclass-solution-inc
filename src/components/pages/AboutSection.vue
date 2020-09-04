@@ -23,6 +23,7 @@
                   color="indigo darken-1"
                   class="mt-5 text-capitalize font-weight-medium"
                   large
+                  @click="dialog = true"
                 >
                   Contact Us
                 </v-btn>
@@ -32,8 +33,31 @@
         </v-col>
       </v-row>
     </v-container>
+
+
+    <contact-modal 
+      :visible="dialog"
+      @close="dialog = false"
+    />
+
   </section>
 </template>
+
+<script>
+  export default {
+    name: 'about-section',
+
+    data () {
+      return {
+        dialog: false
+      }
+    },
+    
+    components: {
+      ContactModal: () => import('@/components/pages/ContactModal')
+    }
+  }
+</script>
 
 <style scoped>
 #about {
