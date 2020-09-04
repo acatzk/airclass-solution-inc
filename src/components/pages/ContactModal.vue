@@ -53,7 +53,7 @@
 
                   <v-text-field
                     label="Phone"
-                    v-model="form.phone"
+                    v-model="form.contact"
                     :rules="[required('Phone')]"
                     ref="phone"
                   ></v-text-field>
@@ -85,6 +85,7 @@
                         block
                         depressed
                         class="mt-3"
+                        :loading="loading"
                         @click="onClickSubmitForm"
                       >
                         Send
@@ -121,7 +122,7 @@
         form: {
           name: null,
           email: null,
-          phone: null,
+          contact: null,
           message: null
         },
         required(propertyType) { 
@@ -152,6 +153,7 @@
       onClickResetForm () {
         this.form = {}
         this.$refs.form.reset()
+        this.loading = false
       },
 
       onClickSubmitForm () {
@@ -164,7 +166,7 @@
             email,
             contact,
             message
-          } = this.$data
+          } = this.$data.form
 
           this
            .$apollo
@@ -174,10 +176,11 @@
            })
            .then(() => {
               this.onClickResetForm()
-              toastAlertStatus('You message successfully sent', 'success')
+              toastAlertStatus('success', 'You message successfully sent')
+              this.show = !this.show
            })
            .catch(error => {
-             toastAlertStatus(error, 'error')
+             toastAlertStatus('error', error)
              this.loading = false
            })
 
