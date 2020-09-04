@@ -22,6 +22,7 @@
     "subscriptions-transport-ws": "^0.9.18",
     "sweetalert2": "^9.17.2",
     "vue": "^2.6.11",
+    "vue-apollo": "^3.0.4",
     "vue-horizontal-list": "^1.0.12",
     "vue-router": "^3.2.0",
     "vuetify": "^2.2.11",
