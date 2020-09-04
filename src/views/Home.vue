@@ -20,6 +20,8 @@
       
       <testimony-section /> <!-- TESTIMONY CAROUSEL PAGE SECTION -->
 
+      <join-community-section /> <!-- JOIN COMMUNITY PAGE SECTION -->
+
       <contact-section /> <!-- CONTACT PAGE SECTION -->
 
     </home-main-bar> <!-- HOME MAIN BAR -->
@@ -57,6 +59,8 @@
       ComfortSection: () => import('@/components/pages/ComfortSection'),
 
       TestimonySection: () => import('@/components/pages/TestimonySection'),
+
+      JoinCommunitySection: () => import('@/components/pages/JoinComSection'),
 
       ScrollToTop: () => import('@/components/mixins/ScrollToTop'),
 
