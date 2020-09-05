@@ -59,7 +59,7 @@
 
         components: {
             HomeSideBar: () => import('./HomeSideBar'),
-            ContactModal: () => import('@/components/pages/ContactModal')
+            ContactModal: () => import('@/components/pages/modals/ContactModal')
         },
 
         data () {

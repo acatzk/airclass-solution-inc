@@ -54,7 +54,7 @@
     },
     
     components: {
-      ContactModal: () => import('@/components/pages/ContactModal')
+      ContactModal: () => import('@/components/pages/modals/ContactModal')
     }
   }
 </script>
