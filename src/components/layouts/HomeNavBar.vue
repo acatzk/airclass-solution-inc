@@ -29,10 +29,10 @@
         >
           <span class="text-capitalize">{{ text }}</span>
         </v-btn>
-        <v-btn depressed text class="ml-10">
+        <v-btn depressed text class="ml-10" @click="authDialog = true">
           <span class="text-capitalize">Log In</span>
         </v-btn>
-        <v-btn depressed color="primary">
+        <v-btn depressed color="primary" @click="authDialog = true">
           <span class="text-capitalize">Sign Up</span>
         </v-btn>
       </div> <!-- NAVIGATION LINKS -->
@@ -49,6 +49,11 @@
     <contact-modal 
       :visible="dialog"
       @close="dialog = false"
+    /> <!-- CONTACT FORM MODAL -->
+
+    <sign-in-up-modal
+      :visible="authDialog"
+      @close="authDialog = false"
     />
 
   </div>
@@ -59,13 +64,15 @@
 
         components: {
             HomeSideBar: () => import('./HomeSideBar'),
-            ContactModal: () => import('@/components/pages/modals/ContactModal')
+            ContactModal: () => import('@/components/pages/modals/ContactModal'),
+            SignInUpModal: () => import('@/components/pages/modals/Sign-In-Up-Modal')
         },
 
         data () {
             return {
                 drawer: false,
                 dialog: false,
+                authDialog: false,
                 isXs: false,
                 items: [
                     ["Home", "#hero"],
