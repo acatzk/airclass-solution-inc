@@ -5,11 +5,10 @@
       app
       color="white"
       flat
-      class="px-5"
     >
       <v-toolbar-title class="d-flex">
-        <v-img src="@/assets/a.png" max-width="60px" />
-        <span class="mt-4 ml-3 log-name">Airclass</span>
+        <v-img src="@/assets/a.png" max-width="50px" />
+        <span class="mt-3 log-name">Airclass</span>
       </v-toolbar-title> <!-- BUSINESS LOGO -->
 
       <v-spacer />
@@ -54,56 +53,56 @@
     <sign-in-up-modal
       :visible="authDialog"
       @close="authDialog = false"
-    />
+    /> <!-- SIGN IN / SING UP AUTH MODAL -->
 
   </div>
 </template>
 
 <script>
-    export default {
+  export default {
 
-        components: {
-            HomeSideBar: () => import('./HomeSideBar'),
-            ContactModal: () => import('@/components/pages/modals/ContactModal'),
-            SignInUpModal: () => import('@/components/pages/modals/Sign-In-Up-Modal')
-        },
+    components: {
+      HomeSideBar: () => import('./HomeSideBar'),
+      ContactModal: () => import('@/components/pages/modals/ContactModal'),
+      SignInUpModal: () => import('@/components/pages/modals/Sign-In-Up-Modal')
+    },
 
-        data () {
-            return {
-                drawer: false,
-                dialog: false,
-                authDialog: false,
-                isXs: false,
-                items: [
-                    ["Home", "#hero"],
-                    ["About", "#about"],
-                    ["Download", "#download"],
-                    ["Services", "#services"],
-                    ["Contact", "#contact"]
-                ]
-            }
-        },
-        methods: {
-            onResize () {
-                this.isXs = window.innerWidth < 940;
-            }
-        },
-        watch: {
-            isXs (value) {
-                if (!value) {
-                    if (this.drawer) {
-                        this.drawer = false;
-                    }
-                }
-            }
-        },
-        mounted() {
-            this.onResize()
-            window.addEventListener("resize", this.onResize, { 
-                passive: true 
-            })
-        }
+    data () {
+      return {
+          drawer: false,
+          dialog: false,
+          authDialog: false,
+          isXs: false,
+          items: [
+              ["Home", "#hero"],
+              ["About", "#about"],
+              ["Download", "#download"],
+              ["Services", "#services"],
+              ["Contact", "#contact"]
+          ]
+      }
+    },
+    methods: {
+      onResize () {
+          this.isXs = window.innerWidth < 940;
+      }
+    },
+    watch: {
+      isXs (value) {
+          if (!value) {
+              if (this.drawer) {
+                  this.drawer = false;
+              }
+          }
+      }
+    },
+    mounted() {
+      this.onResize()
+      window.addEventListener("resize", this.onResize, { 
+          passive: true 
+      })
     }
+  }
 </script>
 
 <style scoped>
