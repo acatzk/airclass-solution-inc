@@ -1,31 +1,68 @@
 <template>
-  <v-dialog v-model="show" transition="dialog-bottom-transition">
-    <v-card flat>
-      <v-container>
-        <v-toolbar flat>
-          <v-spacer></v-spacer>
-          <v-btn 
-            icon 
-            dark 
-            @click="show = !show"
-            color="black"
+  <v-dialog 
+    v-model="show" 
+    transition="dialog-bottom-transition" 
+    width="500"
+    
+  >
+    <v-card 
+      flat
+    >
+      <v-toolbar flat>
+        <v-toolbar-title>
+          <v-img src="@/assets/a.png" max-width="60px" />
+        </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn 
+          icon 
+          dark 
+          @click="show = !show"
+          color="black"
+        >
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+      </v-toolbar>
+
+      <v-tabs 
+        color="basil"
+        background-color="transparent"
+        grow
+      >
+        <v-tab>
+          Sign In
+        </v-tab>
+        <v-tab>
+          Sign Up
+        </v-tab>
+
+        <v-tab-item>
+          <v-card
+            color="basil"
+            flat
           >
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-        </v-toolbar>
-        <v-row align="center" justify="center">
-          <v-col cols="10">
-            <v-row justify="center">
-              <v-col cols="12" sm="6">
-                sign in
-              </v-col>
-              <v-col cols="12" sm="6">
-                sign up
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-      </v-container>
+            <v-container>
+
+              <sign-in-form /> <!-- SIGN IN FORM VUE COMPONENT -->
+              
+            </v-container>
+          </v-card>
+        </v-tab-item>
+
+        <v-tab-item>
+          <v-card
+            color="basil"
+            flat
+          >
+            <v-container>
+              <v-card-text>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum facilis sint maxime ipsam officiis rem necessitatibus culpa accusamus neque voluptates!
+              </v-card-text>
+            </v-container>
+          </v-card>
+        </v-tab-item>
+
+      </v-tabs>
+
     </v-card>
   </v-dialog>
 </template>
@@ -37,11 +74,8 @@
 
     props: ['visible'],
 
-
-    data () {
-        return {
-
-        }
+    components: {
+      SignInForm: () => import('@/components/pages/forms/SignInForm')
     },
 
     computed: {
