@@ -43,7 +43,7 @@
             <v-container>
 
               <sign-in-form /> <!-- SIGN IN FORM VUE COMPONENT -->
-              
+
             </v-container>
           </v-card>
         </v-tab-item>
@@ -54,9 +54,9 @@
             flat
           >
             <v-container>
-              <v-card-text>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum facilis sint maxime ipsam officiis rem necessitatibus culpa accusamus neque voluptates!
-              </v-card-text>
+              
+              <sign-up-form /> <!-- SIGN IN FORM VUE COMPONENT -->
+
             </v-container>
           </v-card>
         </v-tab-item>
@@ -75,7 +75,8 @@
     props: ['visible'],
 
     components: {
-      SignInForm: () => import('@/components/pages/forms/SignInForm')
+      SignInForm: () => import('@/components/pages/forms/SignInForm'),
+      SignUpForm: () => import('@/components/pages/forms/SignUpForm')
     },
 
     computed: {
