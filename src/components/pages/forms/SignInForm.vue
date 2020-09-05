@@ -4,13 +4,11 @@
             <v-col cols="12">
                 <v-text-field
                     label="Email"
-                    filled
-                    rounded
                 ></v-text-field>
+            </v-col>
+            <v-col cols="12">
                 <v-text-field
                     label="Password"
-                    filled
-                    rounded
                 ></v-text-field>
             </v-col>
         </v-row>
