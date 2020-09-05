@@ -9,18 +9,11 @@
       flat
     >
       <v-toolbar flat>
+        <v-spacer></v-spacer>
         <v-toolbar-title>
           <v-img src="@/assets/a.png" max-width="60px" />
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-btn 
-          icon 
-          dark 
-          @click="show = !show"
-          color="black"
-        >
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
       </v-toolbar>
 
       <v-tabs 
