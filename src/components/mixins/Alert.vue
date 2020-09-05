@@ -1,5 +1,5 @@
 <template>
-    <v-alert type="error">
+    <v-alert type="error" dismissible>
         {{ message }}
     </v-alert>
 </template>
