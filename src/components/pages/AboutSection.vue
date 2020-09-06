@@ -14,7 +14,10 @@
             <v-col cols="12" md="6">
               <v-container>
                 <p class="text-uppercase font-weight-bold indigo--text darken-1">About Us</p>
-                <h2 class="display-2 font-weight-bold pb-6" style="color: #313131;">We scratch, build and play together</h2>
+                <h2 
+                  class="display-2 font-weight-bold pb-6" 
+                  style="color: #313131; font-family: 'Nunito', sans-serif !important;"
+                >We scratch, build and play together</h2>
                 <p class="mt-2 grey--text line text-justify" style="line-height: 25px;">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor vero ad voluptatum iusto inventore ipsam quidem libero unde officiis! Magnam asperiores magni earum perspiciatis consequatur nobis ad veniam amet sequi!
                 </p>

@@ -6,7 +6,7 @@
                 <v-container>
                 <h2 
                     class="display-2 font-weight-medium text-center" 
-                    style="color: #313131;"
+                    style="color: #313131; font-family: 'Nunito', sans-serif !important;"
                 >Sign up to get more updates <br>  with our latest lessons</h2>
                 </v-container>
             </v-col>

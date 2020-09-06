@@ -6,7 +6,10 @@
           <v-col cols="11">
             <v-row align="center" justify="center">
               <v-col cols="12" md="7" sm="12">
-                <h1 class="display-2 font-weight-black pb-6" style="color: #313131;">Airclass Solution, Inc. </h1>
+                <h1 
+                  class="display-2 font-weight-black pb-6 title-company" 
+                  style="color: #313131;"
+                >Airclass Solution, Inc. </h1>
                 <p class="grey--text">
                   Learning English Language Through Video Calls.<br/>
                   Putting Children First. Preparing children for success in life
@@ -68,7 +71,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .hero-container {
   min-height: 100vh !important;
   margin: 0 100px;
@@ -76,5 +79,8 @@
 .side-hero-img {
   position: relative;
   right: 250px;
+}
+.title-company {
+  font-family: 'Nunito', sans-serif !important;
 }
 </style>
