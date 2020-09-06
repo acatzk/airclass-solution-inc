@@ -1,8 +1,17 @@
 <template>
-  <v-dialog v-model="show" transition="dialog-bottom-transition">
-    <v-card flat>
+  <v-dialog 
+    v-model="show" 
+    transition="dialog-bottom-transition" 
+    width="1000"
+    fullscreen
+  >
+    <v-card flat style="background-color: #f4f7f5;">
       <v-container>
-        <v-toolbar flat>
+        <v-toolbar 
+          flat 
+          dense 
+          style="background-color: #f4f7f5;"
+        >
           <v-spacer></v-spacer>
           <v-btn 
             icon 
@@ -16,83 +25,88 @@
         <v-row align="center" justify="center">
           <v-col cols="10">
             <v-row justify="center">
-              <v-col cols="12" sm="5">
-                <h1 class="font-weight-light display-1">
+              <v-col cols="12" md="6">
+                <h1 class="font-weight-bold display-1" style="color: #0a0a3a;">
                   Contact Us
                 </h1> 
-                <h3 class="font-weight-light mt-3">
+                <v-img
+                  src="@/assets/img/contactsvg.svg"
+                  width="290"
+                  class="d-none d-md-flex d-sm-none"
+                />
+                <p style="color: #0a0a3a;">
                   For more information, inqueries and concern
-                </h3>
-                <h3 class="font-weight-light mt-3">
-                  <v-icon left>mdi-phone-outline</v-icon> 09153246565
-                </h3>
-                <h3 class="font-weight-light">
-                  <v-icon left>mdi-email-outline</v-icon> vicsolution@email.com
-                </h3>
+                </p>
+                <p style="color: #0a0a3a;">
+                  <v-icon left color="#0a0a3a">mdi-phone-outline</v-icon> 09153246565
+                </p>
+                <p style="color: #0a0a3a;">
+                  <v-icon left color="#0a0a3a">mdi-email-outline</v-icon> vicsolution@email.com
+                </p>
               </v-col>
-              <v-col cols="12" sm="7">
-                <v-form 
-                  ref="form"
-                  v-model="valid"
-                  :lazy-validation="lazy"
-                  :disabled="loading"
-                >
-                  <v-text-field
-                    label="Name"
-                    :rules="[required('Name'), ]"
-                    ref="name"
-                    v-model="form.name"
-                  ></v-text-field>
+              <v-col cols="12" md="6">
+                <v-card flat elevation="7" style="border-radius: 10px;">
+                  <v-container>
+                    <v-form 
+                      ref="form"
+                      v-model="valid"
+                      :lazy-validation="lazy"
+                      :disabled="loading"
+                      class="px-8 pt-5"
+                    >
+                      <v-text-field
+                        label="Name"
+                        :rules="[required('Name'), ]"
+                        ref="name"
+                        v-model="form.name"
+                      ></v-text-field>
 
-                  <v-text-field
-                    label="E-mail"
-                    v-model="form.email"
-                    :rules="[required('Email'), emailRules('Email')]"
-                    ref="name"
-                  ></v-text-field>
+                      <v-text-field
+                        label="Email"
+                        v-model="form.email"
+                        :rules="[required('Email'), emailRules('Email')]"
+                        ref="name"
+                      ></v-text-field>
 
-                  <v-text-field
-                    label="Phone"
-                    v-model="form.contact"
-                    :rules="[required('Phone')]"
-                    ref="phone"
-                  ></v-text-field>
+                      <v-text-field
+                        label="Phone"
+                        v-model="form.contact"
+                        :rules="[required('Phone')]"
+                        ref="phone"
+                      ></v-text-field>
 
-                  <v-textarea
-                    label="Message"
-                    v-model="form.message"
-                    :rules="[required('Message')]"
-                    ref="message"
-                  />
+                      <v-textarea
+                        label="Message"
+                        v-model="form.message"
+                        :rules="[required('Message')]"
+                        ref="message"
+                      />
 
-                  <v-row>
-                    <v-col>
-                      <v-btn
-                        rounded
-                        outlined
-                        block
-                        depressed
-                        class="mt-3 grey--text"
-                        @click="onClickResetForm"
-                      >
-                        cancel
-                      </v-btn>
-                    </v-col>
-                    <v-col>
-                      <v-btn
-                        color="primary"
-                        rounded
-                        block
-                        depressed
-                        class="mt-3"
-                        :loading="loading"
-                        @click="onClickSubmitForm"
-                      >
-                        Send
-                      </v-btn>
-                    </v-col>
-                  </v-row>
-                </v-form>
+                     <v-card-actions>
+                       <v-spacer></v-spacer>
+                       <v-btn
+                          outlined
+                          depressed
+                          class="primary--text text-capitalize"
+                          @click="onClickResetForm"
+                          width="90"
+                        >
+                          cancel
+                        </v-btn>
+                        <v-btn
+                          color="primary"
+                          depressed
+                          class="text-capitalize"
+                          :loading="loading"
+                          @click="onClickSubmitForm"
+                          width="90"
+                        >
+                          Send
+                        </v-btn>
+                     </v-card-actions>
+                    </v-form>
+                  </v-container>
+                </v-card>
               </v-col>
             </v-row>
           </v-col>
