@@ -35,7 +35,9 @@
           >
             <v-container>
 
-              <sign-in-form /> <!-- SIGN IN FORM VUE COMPONENT -->
+              <sign-in-form 
+                :form="form"
+              /> <!-- SIGN IN FORM VUE COMPONENT -->
 
             </v-container>
           </v-card>
@@ -48,7 +50,10 @@
           >
             <v-container>
               
-              <sign-up-form /> <!-- SIGN IN FORM VUE COMPONENT -->
+              <sign-up-form 
+                :form="form"
+                @resetForm="onResetForm"
+              /> <!-- SIGN UN FORM VUE COMPONENT -->
 
             </v-container>
           </v-card>
@@ -67,6 +72,17 @@
 
     props: ['visible'],
 
+    data () {
+      return {
+        form: {
+          firstname: null,
+          lastname: null,
+          email: null,
+          password: null
+        }
+      }
+    },
+
     components: {
       SignInForm: () => import('@/components/pages/forms/SignInForm'),
       SignUpForm: () => import('@/components/pages/forms/SignUpForm')
@@ -82,6 +98,12 @@
             this.$emit('close')
           }
         }
+      }
+    },
+
+    methods: {
+      onResetForm () {
+        this.form = {}
       }
     }
     
