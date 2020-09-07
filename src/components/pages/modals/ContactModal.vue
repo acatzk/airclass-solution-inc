@@ -89,7 +89,6 @@
                           depressed
                           class="primary--text text-capitalize"
                           @click="onClickResetForm"
-                          width="90"
                         >
                           cancel
                         </v-btn>
@@ -99,7 +98,6 @@
                           class="text-capitalize"
                           :loading="loading"
                           @click="onClickSubmitForm"
-                          width="90"
                         >
                           Send
                         </v-btn>
