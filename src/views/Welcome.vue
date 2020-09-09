@@ -44,19 +44,19 @@
 
       HomeMainBar: () => import('@/components/layouts/HomeMainBar'),
 
-      HomeSection: () => import('@/components/pages/home-sections/HomeSection'),
+      HomeSection: () => import('@/components/pages/welcome-sections/HomeSection'),
 
-      DownloadSection: () => import('@/components/pages/home-sections/DownloadSection'),
+      DownloadSection: () => import('@/components/pages/welcome-sections/DownloadSection'),
 
-      AboutSection: () => import('@/components/pages/home-sections/AboutSection'),
+      AboutSection: () => import('@/components/pages/welcome-sections/AboutSection'),
 
-      ServiceSection: () => import('@/components/pages/home-sections/ServiceSection'),
+      ServiceSection: () => import('@/components/pages/welcome-sections/ServiceSection'),
 
-      ComfortSection: () => import('@/components/pages/home-sections/ComfortSection'),
+      ComfortSection: () => import('@/components/pages/welcome-sections/ComfortSection'),
 
-      TestimonySection: () => import('@/components/pages/home-sections/TestimonySection'),
+      TestimonySection: () => import('@/components/pages/welcome-sections/TestimonySection'),
 
-      JoinCommunitySection: () => import('@/components/pages/home-sections/JoinComSection'),
+      JoinCommunitySection: () => import('@/components/pages/welcome-sections/JoinComSection'),
 
       ScrollToTop: () => import('@/components/mixins/ScrollToTop'),
 
