@@ -37,6 +37,7 @@
 
               <sign-in-form 
                 :form="form"
+                @onResetForm="onResetForm"
               /> <!-- SIGN IN FORM VUE COMPONENT -->
 
             </v-container>
@@ -52,7 +53,7 @@
               
               <sign-up-form 
                 :form="form"
-                @resetForm="onResetForm"
+                @onResetForm="onResetForm"
               /> <!-- SIGN UN FORM VUE COMPONENT -->
 
             </v-container>
