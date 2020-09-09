@@ -47,7 +47,7 @@
             <v-col>
                 <v-btn 
                     outlined 
-                    class="grey--text text-capitalize"
+                    class="primary--text text-capitalize"
                     depressed
                     block
                     large
@@ -102,7 +102,7 @@
                 loading: false,
                 valid: true,
                 lazy: false,
-                error: false,
+                error: null,
                 required (propertyType) { 
                     return v => v && v.length > 0 || `${propertyType} is required.`
                 },
@@ -128,7 +128,7 @@
             onClickResetForm () {
                 this.$refs.form.reset()
                 this.loading = false
-                this.$emit('resetForm')
+                this.$emit('onResetForm')
             },
 
             onSubmitForm () {
