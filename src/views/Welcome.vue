@@ -44,19 +44,19 @@
 
       HomeMainBar: () => import('@/components/layouts/HomeMainBar'),
 
-      HomeSection: () => import('@/components/pages/HomeSection'),
+      HomeSection: () => import('@/components/pages/home-sections/HomeSection'),
 
-      DownloadSection: () => import('@/components/pages/DownloadSection'),
+      DownloadSection: () => import('@/components/pages/home-sections/DownloadSection'),
 
-      AboutSection: () => import('@/components/pages/AboutSection'),
+      AboutSection: () => import('@/components/pages/home-sections/AboutSection'),
 
-      ServiceSection: () => import('@/components/pages/ServiceSection'),
+      ServiceSection: () => import('@/components/pages/home-sections/ServiceSection'),
 
-      ComfortSection: () => import('@/components/pages/ComfortSection'),
+      ComfortSection: () => import('@/components/pages/home-sections/ComfortSection'),
 
-      TestimonySection: () => import('@/components/pages/TestimonySection'),
+      TestimonySection: () => import('@/components/pages/home-sections/TestimonySection'),
 
-      JoinCommunitySection: () => import('@/components/pages/JoinComSection'),
+      JoinCommunitySection: () => import('@/components/pages/home-sections/JoinComSection'),
 
       ScrollToTop: () => import('@/components/mixins/ScrollToTop'),
 
