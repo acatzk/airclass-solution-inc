@@ -32,6 +32,7 @@
                                             src="@/assets/img/sign-up-in.svg"
                                             class="d-block ml-auto mr-auto"
                                             max-width="400"
+                                            lazy-src="@/assets/img/sign-up-in.svg"
                                         />
                                     </v-col>
                                     <v-col cols="12" class="text-center">
@@ -63,38 +64,11 @@
 
                                     <p class="gray--text font-weight-light or pt-4">Or sign in with e-email</p>
                                     
-                                    <v-form>
-                                        <v-flex>
-                                            <v-text-field
-                                                label="Email"
-                                                solo-inverted
-                                                flat
-                                                class="radius font-weight-light"
-                                                clearable
-                                            ></v-text-field>
-                                            <v-text-field
-                                                label="Password"
-                                                class="radius font-weight-light"
-                                                solo-inverted
-                                                flat
-                                                clearable
-                                                :type="showPass ? 'text' : 'password'"
-                                                :append-icon="showPass ? 'mdi-eye-off' : 'mdi-eye'"
-                                                @click:append="showPass = !showPass"
-                                            ></v-text-field>
-                                            <a href="#" class="forgot-pass">Forgot password?</a>
-                                            <v-btn
-                                                color="pink text-capitalize"
-                                                depressed
-                                                block
-                                                large
-                                                dark
-                                                class="radius"
-                                            >
-                                                <v-icon left>mdi-check</v-icon> Sign In
-                                            </v-btn>
-                                        </v-flex>
-                                    </v-form>
+                                    <sign-in-form 
+                                        :form="form"
+                                        @onResetForm="onResetForm"
+                                    />
+
                                 </v-container>
 
                                 <div class="text-center">
@@ -131,7 +105,8 @@
         name: 'sign-in-modal',
 
         components: {
-            SignUpModal: () => import('./SignUpModal')
+            SignUpModal: () => import('./SignUpModal'),
+            SignInForm: () => import('@/components/pages/forms/SignInForm')
         },
         
         props: ['visible'],
@@ -139,7 +114,11 @@
         data () {
             return {
                 showPass: false,
-                dialog: false
+                dialog: false,
+                form: {
+                    email: null,
+                    password: null
+                }
             }
         },
 
@@ -153,6 +132,12 @@
                         this.$emit('close')
                     }
                 }
+            }
+        },
+
+        methods: {
+            onResetForm () {
+                this.form = {}
             }
         }
     }

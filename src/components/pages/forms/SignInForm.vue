@@ -6,7 +6,7 @@
         :disabled="loading"
     >
 
-        <v-alert
+         <v-alert
             outlined
             type="warning"
             border="bottom"
@@ -15,57 +15,45 @@
             class="text-capitalize"
             dense
         >
-         <strong>{{ error.split('/')[1] }}</strong>
+            <strong>{{ error.split('/')[1] }}</strong>
         </v-alert>
 
-        <v-row>
-            <v-col cols="12">
-                <v-text-field
-                    label="Email"
-                    v-model="form.email"
-                    :rules="[required('Email'), emailRules('Email')]"
-                ></v-text-field>
-            </v-col>
-            <v-col cols="12">
-                <v-text-field
-                    @keyup.enter="onSubmitForm"
-                    label="Password"
-                    v-model="form.password"
-                    :rules="[required('Password')]"
-                    :type="show ? 'text' : 'password'"
-                    :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                    @click:append="show = !show"
-                ></v-text-field>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col>
-                <v-btn 
-                    outlined 
-                    class="primary--text text-capitalize"
-                    depressed
-                    block
-                    large
-                    rounded
-                    @click="onClickResetForm"
-                >
-                    Cancel
-                </v-btn>
-            </v-col>
-            <v-col>
-                <v-btn
-                    color="primary text-capitalize"
-                    depressed
-                    block
-                    large
-                    rounded
-                    :loading="loading"
-                    @click="onSubmitForm"
-                >
-                    Login
-                </v-btn>
-            </v-col>
-        </v-row>
+        <v-flex>
+            <v-text-field
+                label="Email"
+                solo-inverted
+                flat
+                class="radius font-weight-light"
+                v-model="form.email"
+                :rules="[required('Email'), emailRules('Email')]"
+            ></v-text-field>
+            <v-text-field
+                label="Password"
+                class="radius font-weight-light"
+                solo-inverted
+                flat
+                clearable
+                :type="showPass ? 'text' : 'password'"
+                :append-icon="showPass ? 'mdi-eye-off' : 'mdi-eye'"
+                @click:append="showPass = !showPass"
+                v-model="form.password"
+                :rules="[required('Password')]"
+                @keyup.enter="onSubmitForm"
+            ></v-text-field>
+            <a href="#" class="forgot-pass">Forgot password?</a>
+            <v-btn
+                color="pink text-capitalize"
+                depressed
+                block
+                large
+                dark
+                class="radius"
+                @click="onSubmitForm"
+                :loading="loading"
+            >
+                <v-icon left>mdi-check</v-icon> Sign In
+            </v-btn>
+        </v-flex>
     </v-form>
 </template>
 
@@ -87,7 +75,7 @@
 
         data () {
             return {
-                show: false,
+                showPass: false,
                 loading: false,
                 valid: true,
                 lazy: false,
@@ -151,3 +139,19 @@
         }
     }
 </script>
+
+<style scoped>
+.forgot-pass {
+    text-decoration: none;
+    font-weight: medium;
+    color: #FF1976;
+    font-size: 13px;
+    float: right;
+    position: relative;
+    bottom: 15px;
+}
+
+.forgot-pass:hover {
+    text-decoration: underline;
+}
+</style>
