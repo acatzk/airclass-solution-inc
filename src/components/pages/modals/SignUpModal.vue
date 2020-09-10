@@ -93,7 +93,7 @@
                                     </p>
 
                                     <h4 class="font-weight-light pt-1 gray--text">
-                                        Have an account? <a href="#" class="text-decoration-none">Sign in</a>
+                                        Have an account? <a href="#" class="text-decoration-none" @click="dialog = true, show = false">Sign in</a>
                                     </h4>
 
                                     <p class="or lightgray--text mt-4 font-weight-light">
@@ -124,18 +124,29 @@
                 </v-row>
             </v-container>
         </v-card>
+
+        <sign-in-modal 
+            :visible="dialog"
+            @close="dialog = false"
+        /> <!-- SIGN UP MODAL VUE COMPONENT -->
+
     </v-dialog>
 </template>
 
 <script>
     export default {
         name: 'sign-in-modal',
+
+        components: {
+            SignInModal: () => import('./SignInModal')
+        },
         
         props: ['visible'],
 
         data () {
             return {
-                showPass: false
+                showPass: false,
+                dialog: false
             }
         },
 

@@ -104,7 +104,7 @@
                                     </p>
 
                                     <h4 class="font-weight-light pt-1 gray--text">
-                                        Don't have an account yet? <a href="#" class="text-decoration-none">Create account</a>
+                                        Don't have an account yet? <a href="#" class="text-decoration-none" @click="dialog = true, show = false">Create account</a>
                                     </h4>
 
                                     <p class="or lightgray--text mt-4 font-weight-light">
@@ -116,8 +116,12 @@
                     </v-col>
                 </v-row>
             </v-container>
-
         </v-card>
+
+        <sign-up-modal 
+            :visible="dialog"
+            @close="dialog = false"
+        /> <!-- SIGN UP MODAL VUE COMPONENT -->
 
     </v-dialog>
 </template>
@@ -125,12 +129,17 @@
 <script>
     export default {
         name: 'sign-in-modal',
+
+        components: {
+            SignUpModal: () => import('./SignUpModal')
+        },
         
         props: ['visible'],
 
         data () {
             return {
-                showPass: false
+                showPass: false,
+                dialog: false
             }
         },
 
