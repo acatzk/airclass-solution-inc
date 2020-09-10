@@ -16,7 +16,7 @@
                 </p>
                 <v-btn 
                   x-large 
-                  class="mt-3 text-capitalize" 
+                  class="mt-3 text-capitalize border rounded-lg" 
                   rounded 
                   color="primary" 
                   depressed
