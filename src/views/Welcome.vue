@@ -1,6 +1,6 @@
 <template>
 
-  <div class="home">
+  <div class="welcome">
 
     <scroll-indicator /> <!-- SCROLL INDOCATOR LENGTH -->
 
