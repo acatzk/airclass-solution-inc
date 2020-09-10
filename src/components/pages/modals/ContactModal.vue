@@ -32,6 +32,7 @@
                 <v-img
                   src="@/assets/img/contactsvg.svg"
                   width="290"
+                  lazy-src="@/assets/img/contactsvg.svg"
                   class="d-none d-md-flex d-sm-none"
                 />
                 <p style="color: #0a0a3a;">
