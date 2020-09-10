@@ -74,6 +74,7 @@
                                     <v-col cols="12">
                                         <v-img
                                             src="@/assets/img/sign-up-in.svg"
+                                            lazy-src="@/assets/img/sign-up-in.svg"
                                             class="d-block ml-auto mr-auto"
                                             max-width="400"
                                         />
