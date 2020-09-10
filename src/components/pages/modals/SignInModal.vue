@@ -78,7 +78,7 @@
                                     </p>
 
                                     <h4 class="font-weight-light pt-1 gray--text">
-                                        Don't have an account yet? <a href="#" class="text-decoration-none" @click="dialog = true, show = false">Create account</a>
+                                        Don't have an account yet? <a class="text-decoration-none" @click="dialog = true, show = false">Create account</a>
                                     </h4>
 
                                     <p class="or lightgray--text mt-4 font-weight-light">

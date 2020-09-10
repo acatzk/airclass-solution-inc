@@ -60,7 +60,7 @@
                                     </p>
 
                                     <h4 class="font-weight-light pt-1 gray--text">
-                                        Have an account? <a href="#" class="text-decoration-none" @click="signUpDialog = true, show = false">Sign in</a>
+                                        Have an account? <a class="text-decoration-none" @click="signUpDialog = true, show = false">Sign in</a>
                                     </h4>
 
                                     <p class="or lightgray--text mt-4 font-weight-light">
