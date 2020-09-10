@@ -31,7 +31,7 @@
         <v-btn depressed text class="ml-10" @click="signInDialog = true">
           <span class="text-capitalize">Log In</span>
         </v-btn>
-        <v-btn depressed color="primary">
+        <v-btn depressed color="primary" @click="signUpDialog = true">
           <span class="text-capitalize">Sign Up</span>
         </v-btn>
       </div> <!-- NAVIGATION LINKS -->
@@ -53,7 +53,12 @@
     <sign-in-modal
       :visible="signInDialog"
       @close="signInDialog = false"
-    /> <!-- SIGN IN / SING UP AUTH MODAL -->
+    /> <!-- SIGN IN AUTH MODAL -->
+
+    <sign-up-modal
+      :visible="signUpDialog"
+      @close="signUpDialog = false"
+    /> <!-- SING UP AUTH MODAL -->
 
   </div>
 </template>
@@ -65,6 +70,7 @@
       WelcomeSideBar: () => import('./WelcomeSideBar'),
       ContactModal: () => import('@/components/pages/modals/ContactModal'),
       SignInModal: () => import('@/components/pages/modals/SignInModal'),
+      SignUpModal: () => import('@/components/pages/modals/SignUpModal'),
     },
 
     data () {
@@ -72,6 +78,7 @@
           drawer: false,
           dialog: false,
           signInDialog: false,
+          signUpDialog: false,
           isXs: false,
           items: [
               ["Home", "#hero"],
