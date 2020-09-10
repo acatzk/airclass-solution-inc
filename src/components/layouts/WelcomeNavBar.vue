@@ -38,7 +38,7 @@
 
     </v-app-bar>
 
-    <home-side-bar 
+    <welcome-side-bar 
         :visible="drawer"
         :items="items"
         @close="drawer = false"
@@ -62,7 +62,7 @@
   export default {
 
     components: {
-      HomeSideBar: () => import('./HomeSideBar'),
+      WelcomeSideBar: () => import('./WelcomeSideBar'),
       ContactModal: () => import('@/components/pages/modals/ContactModal'),
       SignInUpModal: () => import('@/components/pages/modals/Sign-In-Up-Modal')
     },

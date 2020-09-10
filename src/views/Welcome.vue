@@ -4,11 +4,11 @@
 
     <scroll-indicator /> <!-- SCROLL INDOCATOR LENGTH -->
 
-    <home-nav-bar /> <!-- HOME NAVIGATION BAR -->
+    <welcome-nav-bar /> <!-- WELCOME NAVIGATION BAR -->
     
-    <home-main-bar>
+    <welcome-main-bar>
 
-      <home-section /> <!-- HOME PAGE SECTION -->
+      <welcome-section /> <!-- WELCOME PAGE SECTION -->
 
       <service-section /> <!-- SERVICES PAGE SECTION -->
 
@@ -22,11 +22,11 @@
 
       <join-community-section /> <!-- JOIN COMMUNITY PAGE SECTION -->
 
-    </home-main-bar> <!-- HOME MAIN BAR -->
+    </welcome-main-bar> <!-- WELCOME MAIN BAR -->
 
     <scroll-to-top /> <!-- SCROLL TO TOP BUTTON -->
 
-    <home-foot-bar /> <!-- HOME FOOTER BAR -->
+    <welcome-foot-bar /> <!-- WELCOME FOOTER BAR -->
 
   </div>
   
@@ -40,11 +40,11 @@
 
       ScrollIndicator: () => import('@/components/mixins/ScrollIndicator'),
 
-      HomeNavBar: () => import('@/components/layouts/HomeNavBar'),
+      WelcomeNavBar: () => import('@/components/layouts/WelcomeNavBar'),
 
-      HomeMainBar: () => import('@/components/layouts/HomeMainBar'),
+      WelcomeMainBar: () => import('@/components/layouts/WelcomeMainBar'),
 
-      HomeSection: () => import('@/components/pages/welcome-sections/HomeSection'),
+      WelcomeSection: () => import('@/components/pages/welcome-sections/WelcomeSection'),
 
       DownloadSection: () => import('@/components/pages/welcome-sections/DownloadSection'),
 
@@ -60,7 +60,7 @@
 
       ScrollToTop: () => import('@/components/mixins/ScrollToTop'),
 
-      HomeFootBar: () => import('@/components/layouts/HomeFootBar')
+      WelcomeFootBar: () => import('@/components/layouts/WelcomeFootBar')
       
     }
 
