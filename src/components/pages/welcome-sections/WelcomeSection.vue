@@ -16,7 +16,7 @@
                 </p>
                 <v-btn 
                   x-large 
-                  class="mt-3 text-capitalize pa-7" 
+                  class="mt-3 text-capitalize" 
                   rounded 
                   color="primary" 
                   depressed
@@ -25,11 +25,11 @@
                   Sign Up for free
                 </v-btn>
                 <v-btn 
-                  fab 
+                  fab
                   @click="$vuetify.goTo('#services')"
                   outlined
                   text
-                  large
+                  medium
                   class="mt-3 ml-5"
                 >
                   <v-icon>mdi-arrow-down</v-icon>
