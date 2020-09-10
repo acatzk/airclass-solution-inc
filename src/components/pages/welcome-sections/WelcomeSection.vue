@@ -20,7 +20,7 @@
                   rounded 
                   color="primary" 
                   depressed
-                  @click="authDialog = true"
+                  @click="dialog = true"
                 >
                   Sign Up for free
                 </v-btn>
@@ -47,9 +47,9 @@
         </v-row>
       </v-layout>
 
-      <sign-in-up-modal
-        :visible="authDialog"
-        @close="authDialog = false"
+      <sign-up-modal
+        :visible="dialog"
+        @close="dialog = false"
       />  <!-- SIGN IN / SING UP AUTH MODAL -->
 
   </section>
@@ -61,12 +61,12 @@
 
     data () {
       return {
-        authDialog: false
+        dialog: false
       }
     },
     
     components: {
-      SignInUpModal: () => import('@/components/pages/modals/Sign-In-Up-Modal')
+      SignUpModal: () => import('@/components/pages/modals/SignUpModal'),
     }
   }
 </script>
