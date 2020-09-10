@@ -5,23 +5,23 @@
     width="1000"
     fullscreen
   >
+    <v-toolbar 
+      flat 
+      dense 
+      style="background-color: #f4f7f5;"
+    >
+      <v-spacer></v-spacer>
+      <v-btn 
+        icon 
+        dark 
+        @click="show = !show"
+        color="black"
+      >
+        <v-icon>mdi-close</v-icon>
+      </v-btn>
+    </v-toolbar>
     <v-card flat style="background-color: #f4f7f5;">
       <v-container>
-        <v-toolbar 
-          flat 
-          dense 
-          style="background-color: #f4f7f5;"
-        >
-          <v-spacer></v-spacer>
-          <v-btn 
-            icon 
-            dark 
-            @click="show = !show"
-            color="black"
-          >
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-        </v-toolbar>
         <v-row align="center" justify="center">
           <v-col cols="10">
             <v-row justify="center">
