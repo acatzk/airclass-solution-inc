@@ -1,0 +1,182 @@
+<template>
+    <v-dialog 
+        v-model="show" 
+        centered
+        fullscreen
+    >
+        <v-toolbar 
+          flat 
+          dense
+        >
+          <v-spacer></v-spacer>
+          <v-btn 
+            icon 
+            @click="show = !show"
+            color="black"
+            dark
+          >
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-toolbar>
+
+        <v-card flat>
+            
+            <v-container fluid>
+                <v-row align="center" justify="center">
+                    <v-col cols="10">
+                        <v-row align="center" justify="center">
+                            <v-col cols="12" md="6" class="d-none d-md-flex">
+                                <v-img
+                                    src="@/assets/img/sign-up-in.svg"
+                                    class="d-block ml-auto mr-auto"
+                                    max-width="450px"
+                                />
+                            </v-col>
+                            <v-col cols="12" md="6">
+                                <v-container>
+                                    <h2 
+                                        class="display-1 darkblue--text font-weight-bold pb-12"
+                                    >Sign in</h2>
+
+                                    <v-btn
+                                        depressed
+                                        class="darkblue--text text-lowercase btn-rounded"
+                                        x-large
+                                        block
+                                        color="#fdf1fd"
+                                    >
+                                        <v-icon 
+                                            right 
+                                            class="mr-3 google-icon" 
+                                        >mdi-google</v-icon> Or sign-in with google
+                                    </v-btn>
+
+                                    <p class="gray--text font-weight-light or pt-4">Or sign in with e-email</p>
+                                    
+                                    <v-form>
+                                        <v-flex>
+                                            <v-text-field
+                                                label="Email"
+                                                solo-inverted
+                                                flat
+                                                class="radius font-weight-light"
+                                                clearable
+                                            ></v-text-field>
+                                            <v-text-field
+                                                label="Password"
+                                                class="radius font-weight-light"
+                                                solo-inverted
+                                                flat
+                                                clearable
+                                                :type="showPass ? 'text' : 'password'"
+                                                :append-icon="showPass ? 'mdi-eye-off' : 'mdi-eye'"
+                                                @click:append="showPass = !showPass"
+                                            ></v-text-field>
+                                            <a href="#" class="forgot-pass">Forgot password?</a>
+                                            <v-btn
+                                                color="pink text-capitalize"
+                                                depressed
+                                                block
+                                                large
+                                                dark
+                                                class="radius"
+                                            >
+                                                <v-icon left>mdi-check</v-icon> Sign In
+                                            </v-btn>
+                                        </v-flex>
+                                    </v-form>
+                                </v-container>
+
+                                <p class="text-center gray--text font-weight-light or mt-5">
+                                    By Signing in, I agree to the <a href="#" target="_blank" class="text-decoration-underline gray--text font-weight-medium">Airclass Privacy <br>
+                                    Policy</a> and <a href="#"  target="_blank" class="text-decoration-underline gray--text font-weight-medium">Terms of Service</a>
+                                </p>
+
+                                <h4 class="text-center font-weight-light pt-1 gray--text">
+                                    Don't have an account yet? <a href="#" class="text-decoration-none">Create account</a>
+                                </h4>
+
+                                <p class="or lightgray--text mt-4 font-weight-light">
+                                    2020 All rights Reserved. Airclass
+                                </p>
+                            </v-col>
+                        </v-row>
+                    </v-col>
+                </v-row>
+            </v-container>
+
+        </v-card>
+
+    </v-dialog>
+</template>
+
+<script>
+    export default {
+        name: 'sign-in-modal',
+        
+        props: ['visible'],
+
+        data () {
+            return {
+                showPass: false
+            }
+        },
+
+        computed: {
+            show: {
+                get () {
+                    return this.visible
+                },
+                set (value) {
+                    if (!value) {
+                        this.$emit('close')
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<style lang="scss" scoped>
+
+.btn-rounded {
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.radius {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.or {
+    text-align: center;
+    font-size: 13px;
+}
+
+.forgot-pass {
+    text-decoration: none;
+    font-weight: medium;
+    color: #FF1976;
+    font-size: 13px;
+    float: right;
+    position: relative;
+    bottom: 15px;
+}
+
+.forgot-pass:hover {
+    text-decoration: underline;
+}
+
+.google-icon {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+</style>
