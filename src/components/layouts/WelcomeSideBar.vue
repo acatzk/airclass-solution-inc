@@ -34,12 +34,12 @@
         </v-list-item-content>
       </v-list-item>
       <v-list-item>
-        <v-btn depressed text block large @click="authDialog = true">
+        <v-btn depressed text block large @click="signInDialog = true">
           <span class="text-capitalize">Log In</span>
         </v-btn>
       </v-list-item>
         <v-list-item>
-          <v-btn depressed color="primary" block large @click="authDialog = true">
+          <v-btn depressed color="primary" block large @click="signUpDialog = true">
             <span class="text-capitalize">Sign Up</span>
           </v-btn>
       </v-list-item>
@@ -50,10 +50,15 @@
       @close="dialog = false"
     /> <!-- CONTACT FORM MODAL -->
 
-    <sign-in-up-modal
-      :visible="authDialog"
-      @close="authDialog = false"
-    />  <!-- SIGN IN / SING UP AUTH MODAL -->
+    <sign-in-modal
+      :visible="signInDialog"
+      @close="signInDialog = false"
+    />  <!-- SIGN IN AUTH MODAL -->
+
+     <sign-up-modal
+      :visible="signUpDialog"
+      @close="signUpDialog = false"
+    />  <!-- SING UP AUTH MODAL -->
 
   </v-navigation-drawer> <!-- NAVIGATION DRAWER -->
 
@@ -66,13 +71,15 @@
     data () {
       return {
         dialog: false,
-        authDialog: false
+        signInDialog: false,
+        signUpDialog: false
       }
     },
 
     components: {
       ContactModal: () => import('@/components/pages/modals/ContactModal'),
-      SignInUpModal: () => import('@/components/pages/modals/Sign-In-Up-Modal')
+      SignInModal: () => import('@/components/pages/modals/SignInModal'),
+      SignUpModal: () => import('@/components/pages/modals/SignUpModal')
     },
     
     props: ['items', 'visible'],
