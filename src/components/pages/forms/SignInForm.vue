@@ -9,13 +9,13 @@
         <v-alert
             outlined
             type="warning"
-            prominent
-            border="left"
+            border="bottom"
             v-show="error"
-            dense
+            dismissible
             class="text-capitalize"
+            dense
         >
-         {{ error.split('/')[1] }}
+         <strong>{{ error.split('/')[1] }}</strong>
         </v-alert>
 
         <v-row>
