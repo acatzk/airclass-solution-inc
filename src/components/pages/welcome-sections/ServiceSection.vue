@@ -25,19 +25,21 @@
                         sm=6
                         v-for="([src, title, description], i) in goals" :key="i"
                     >
-                        <v-hover v-slot="{ hover }">
+                        <v-hover v-slot:default="{ hover }">
                             <v-card
-                                class="mx-auto"
+                                class="mx-auto pa-3"
                                 flat
                                 outlined
-                                :elevation="hover ? 8 : 0"
+                                :elevation="hover ? 10 : 0"
+                                :class="{ up: hover }"
+                                shaped
                             >
                                 <v-img
-                                    min-height="230px"
                                     :src="src"
-                                    :lazy-src="src"
-                                >
-                                </v-img>
+                                    max-width="150"
+                                    class="d-block ml-auto mr-auto mt-5"
+                                    :class="{ 'zoom-efect': hover }"
+                                ></v-img>
 
                                 <v-card-title class="text-center text-primary">{{ title }}</v-card-title>
                                 
@@ -62,9 +64,9 @@
         data () {
             return {
                 goals: [
-                    ['https://increasify.com.au/wp-content/uploads/2016/08/default-image.png', 'English Learning', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.'],
-                    ['https://increasify.com.au/wp-content/uploads/2016/08/default-image.png', 'Secured Video Call', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.'],
-                    ['https://increasify.com.au/wp-content/uploads/2016/08/default-image.png', 'Creative Trainning', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.']
+                    [require('@/assets/img/icon1.png'), 'English Learning', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.'],
+                    [require('@/assets/img/icon2.png'), 'Secured Video Call', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.'],
+                    [require('@/assets/img/icon3.png'), 'Creative Trainning', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quas.']
                 ]
             }
         }
@@ -74,5 +76,19 @@
 <style scoped lang="scss">
 #services {
     min-height: 100vh;
+}
+.zoom-efect {
+    transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    -ms-transition: all .5s;
+
+
+    transform : scale(1.2);
+    -moz-transform : scale(1.2);
+    -webkit-transform : scale(1.2);
+    -o-transform : scale(1.2);
+    -ms-transform : scale(1.2);
 }
 </style>
