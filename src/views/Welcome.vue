@@ -34,7 +34,7 @@
 
 <script>
   export default {
-    name: 'home',
+    name: 'welcome',
 
     components: {
 
