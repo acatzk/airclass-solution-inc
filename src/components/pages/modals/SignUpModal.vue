@@ -46,44 +46,11 @@
 
                                     <p class="gray--text font-weight-light or pt-4">Or sign in with e-email</p>
                                     
-                                    <v-form>
-                                        <v-flex>
-                                            <v-text-field
-                                                label="Name"
-                                                solo-inverted
-                                                flat
-                                                class="radius font-weight-light"
-                                                clearable
-                                            ></v-text-field>
-                                            <v-text-field
-                                                label="Email"
-                                                solo-inverted
-                                                flat
-                                                class="radius font-weight-light"
-                                                clearable
-                                            ></v-text-field>
-                                            <v-text-field
-                                                label="Password"
-                                                class="radius font-weight-light"
-                                                solo-inverted
-                                                flat
-                                                clearable
-                                                :type="showPass ? 'text' : 'password'"
-                                                :append-icon="showPass ? 'mdi-eye-off' : 'mdi-eye'"
-                                                @click:append="showPass = !showPass"
-                                            ></v-text-field>
-                                            <v-btn
-                                                color="pink text-capitalize"
-                                                depressed
-                                                block
-                                                large
-                                                dark
-                                                class="radius"
-                                            >
-                                                <v-icon left>mdi-check</v-icon> Create Account
-                                            </v-btn>
-                                        </v-flex>
-                                    </v-form>
+                                    <sign-up-form 
+                                        :form="form"
+                                        @onResetForm="onResetForm"
+                                    />
+
                                 </v-container>
 
                                 <div class="text-center">
@@ -137,16 +104,21 @@
     export default {
         name: 'sign-up-modal',
 
-        components: {
-            SignInModal: () => import('./SignInModal')
-        },
-        
         props: ['visible'],
+
+        components: {
+            SignInModal: () => import('./SignInModal'),
+            SignUpForm: () => import('@/components/pages/forms/SignUpForm')
+        },
 
         data () {
             return {
-                showPass: false,
-                signUpDialog: false
+                signUpDialog: false,
+                form: {
+                    firstname: null,
+                    email: null,
+                    password: null
+                }
             }
         },
 
@@ -160,6 +132,12 @@
                         this.$emit('close')
                     }
                 }
+            }
+        },
+
+         methods: {
+            onResetForm () {
+                this.form = {}
             }
         }
     }

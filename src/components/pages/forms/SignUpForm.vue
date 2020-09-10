@@ -1,5 +1,5 @@
 <template>
-    <v-form
+    <!-- <v-form
         ref="form"
         v-model="valid"
         :lazy-validation="lazy"
@@ -78,23 +78,75 @@
                 </v-btn>
             </v-col>
         </v-row>
+    </v-form> -->
+
+    <v-form
+        ref="form"
+        v-model="valid"
+        :lazy-validation="lazy"
+        :disabled="loading"
+    >
+
+        <v-alert
+            outlined
+            type="warning"
+            border="bottom"
+            v-show="error"
+            dismissible
+            class="text-capitalize"
+            dense
+        >
+            <strong>{{ error.split('/')[1] }}</strong>
+        </v-alert>
+    
+        <v-flex>
+            <v-text-field
+                label="Name"
+                solo-inverted
+                flat
+                class="radius font-weight-light"
+                :rules="[required('Name')]"
+                v-model="form.firstname"
+            ></v-text-field>
+            <v-text-field
+                label="Email"
+                solo-inverted
+                flat
+                class="radius font-weight-light"
+                :rules="[required('Email'), emailRules('Email')]"
+                v-model="form.email"
+            ></v-text-field>
+            <v-text-field
+                label="Password"
+                class="radius font-weight-light"
+                solo-inverted
+                flat
+                :type="showPass ? 'text' : 'password'"
+                :append-icon="showPass ? 'mdi-eye-off' : 'mdi-eye'"
+                @click:append="showPass = !showPass"
+                v-model="form.password"
+                :rules="[required('Password')]"
+            ></v-text-field>
+            <v-btn
+                color="pink text-capitalize"
+                depressed
+                block
+                large
+                dark
+                class="radius"
+                :loading="loading"
+                @click="onSubmitForm"
+            >
+                <v-icon left>mdi-check</v-icon> Create Account
+            </v-btn>
+        </v-flex>
     </v-form>
+
 </template>
 
 <script>
 
     import gql from 'graphql-tag'
-
-    const ADD_STUDENT_MUTATION = gql`
-        mutation AddStudentMutation($firstname: String, $lastname: String, $email: String, $password: String, $firebase_id: String!) {
-            insert_students(objects: {firstname: $firstname, lastname: $lastname, email: $email, password: $password, firebase_id: $firebase_id}) {
-                affected_rows
-                returning {
-                    id
-                }
-            }
-        }  
-    `
 
     import { auth } from '@/services'
 
@@ -105,7 +157,7 @@
         
         data () {
             return {
-                show: false,
+                showPass: false,
                 loading: false,
                 valid: true,
                 lazy: false,
@@ -142,7 +194,6 @@
 
                     const {
                         firstname,
-                        lastname,
                         email,
                         password
                     } = this.form
@@ -150,7 +201,7 @@
                     auth
                      .createUserWithEmailAndPassword(email, password)
                      .then((firebase) => {
-                        this.saveStudentInHasura (firstname, lastname, email, password, firebase)
+                        this.saveStudentInHasura (firstname, email, password, firebase)
                      })
                      .catch(error => {
                         this.errorProvider(error)
@@ -158,14 +209,22 @@
                 }
             },
 
-            saveStudentInHasura (firstname, lastname, email, password, firebase) {
+            saveStudentInHasura (firstname, email, password, firebase) {
                 this
                  .$apollo
                  .mutate({
-                     mutation: ADD_STUDENT_MUTATION,
+                     mutation: gql`
+                        mutation AddStudentMutation($firstname: String, $email: String, $password: String, $firebase_id: String!) {
+                            insert_students(objects: {firstname: $firstname, email: $email, password: $password, firebase_id: $firebase_id}) {
+                                affected_rows
+                                returning {
+                                    id
+                                }
+                            }
+                        }
+                     `,
                      variables: {
                         firstname,
-                        lastname,
                         email,
                         password,
                         firebase_id: firebase.uid
