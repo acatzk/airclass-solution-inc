@@ -26,11 +26,21 @@
                     <v-col cols="10">
                         <v-row align="center" justify="center">
                             <v-col cols="12" md="6" class="d-none d-md-flex">
-                                <v-img
-                                    src="@/assets/img/sign-up-in.svg"
-                                    class="d-block ml-auto mr-auto"
-                                    max-width="450px"
-                                />
+                                <v-row>
+                                    <v-col cols="12">
+                                        <v-img
+                                            src="@/assets/img/sign-up-in.svg"
+                                            class="d-block ml-auto mr-auto"
+                                            max-width="400"
+                                        />
+                                    </v-col>
+                                    <v-col cols="12" class="text-center">
+                                        <h3 class="font-weight-medium darkblue--text">Learn english easier and faster</h3>
+                                        <p class="lightgray--text my-3 font-weight-light">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur incidunt rerum iste explicabo neque dolores.
+                                        </p>
+                                    </v-col>
+                                </v-row>
                             </v-col>
                             <v-col cols="12" md="6">
                                 <v-container>
@@ -87,18 +97,20 @@
                                     </v-form>
                                 </v-container>
 
-                                <p class="text-center gray--text font-weight-light or mt-5">
-                                    By Signing in, I agree to the <a href="#" target="_blank" class="text-decoration-underline gray--text font-weight-medium">Airclass Privacy <br>
-                                    Policy</a> and <a href="#"  target="_blank" class="text-decoration-underline gray--text font-weight-medium">Terms of Service</a>
-                                </p>
+                                <div class="text-center">
+                                    <p class="gray--text font-weight-light or mt-5">
+                                        By Signing in, I agree to the <a href="#" target="_blank" class="text-decoration-underline gray--text font-weight-medium">Airclass Privacy <br>
+                                        Policy</a> and <a href="#"  target="_blank" class="text-decoration-underline gray--text font-weight-medium">Terms of Service</a>
+                                    </p>
 
-                                <h4 class="text-center font-weight-light pt-1 gray--text">
-                                    Don't have an account yet? <a href="#" class="text-decoration-none">Create account</a>
-                                </h4>
+                                    <h4 class="font-weight-light pt-1 gray--text">
+                                        Don't have an account yet? <a href="#" class="text-decoration-none">Create account</a>
+                                    </h4>
 
-                                <p class="or lightgray--text mt-4 font-weight-light">
-                                    2020 All rights Reserved. Airclass
-                                </p>
+                                    <p class="or lightgray--text mt-4 font-weight-light">
+                                        2020 All rights Reserved. Airclass
+                                    </p>
+                                </div>
                             </v-col>
                         </v-row>
                     </v-col>
