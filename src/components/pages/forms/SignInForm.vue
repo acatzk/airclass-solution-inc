@@ -5,11 +5,18 @@
         :lazy-validation="lazy"
         :disabled="loading"
     >
-        
-        <alert 
+
+        <v-alert
+            outlined
+            type="warning"
+            prominent
+            border="left"
             v-show="error"
-            :message="`${error}`"
-        /> <!-- ALERT ERROR MESSAGE -->
+            dense
+            class="text-capitalize"
+        >
+         {{ error.split('/')[1] }}
+        </v-alert>
 
         <v-row>
             <v-col cols="12">
@@ -71,10 +78,6 @@
     export default {
         name: 'sign-in-form',
 
-        components: {
-            Alert: () => import('@/components/mixins/Alert')
-        },
-
         props: {
             form: {
                 type: Object,
@@ -103,6 +106,7 @@
             onClickResetForm () {
                 this.$refs.form.reset()
                 this.loading = false
+                this.error = ''
                 this.$emit('onResetForm')
             },
 
@@ -122,12 +126,27 @@
                         this.$router.push('/v/dashboard')
                     })
                     .catch(error => { 
-                        this.loading = false
-                        this.error = error
-                        toastAlertStatus('error', error)
+                        this.errorProvider (error)
                     })
                 }
 
+            },
+
+
+            errorProvider (error) {
+                this.loading = false
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                if (errorCode) {
+                    toastAlertStatus('error', errorCode.split('/')[1])
+                    return this.error = errorCode
+                } else if (errorMessage) {
+                    toastAlertStatus('error', errorMessage.split('/')[1])
+                    return this.error = errorMessage
+                } else {
+                    toastAlertStatus('error', error.split('/')[1])
+                    return this.error = error
+                }
             }
         }
     }
