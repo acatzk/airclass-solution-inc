@@ -21,25 +21,25 @@
         <v-flex>
             <v-text-field
                 label="Name"
-                solo-inverted
-                flat
-                class="radius font-weight-light"
+                filled
+                rounded
+                class="radius font-weight-light rounded-lg"
                 :rules="[required('Name')]"
                 v-model="form.firstname"
             ></v-text-field>
             <v-text-field
                 label="Email"
-                solo-inverted
-                flat
-                class="radius font-weight-light"
+                filled
+                rounded
+                class="radius font-weight-light rounded-lg"
                 :rules="[required('Email'), emailRules('Email')]"
                 v-model="form.email"
             ></v-text-field>
             <v-text-field
                 label="Password"
-                class="radius font-weight-light"
-                solo-inverted
-                flat
+                class="radius font-weight-light rounded-lg"
+                filled
+                rounded
                 :type="showPass ? 'text' : 'password'"
                 :append-icon="showPass ? 'mdi-eye-off' : 'mdi-eye'"
                 @click:append="showPass = !showPass"
