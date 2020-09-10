@@ -5,10 +5,17 @@
         :lazy-validation="lazy"
         :disabled="loading"
     >
-        <alert 
+        <v-alert
+            outlined
+            type="warning"
+            border="bottom"
             v-show="error"
-            :message="`${error}`"
-        /> <!-- ALERT ERROR MESSAGE -->
+            dismissible
+            class="text-capitalize"
+            dense
+        >
+         <strong>{{ error.split('/')[1] }}</strong>
+        </v-alert>
 
         <v-row>
             <v-col cols="6">
@@ -102,7 +109,7 @@
                 loading: false,
                 valid: true,
                 lazy: false,
-                error: null,
+                error: '',
                 required (propertyType) { 
                     return v => v && v.length > 0 || `${propertyType} is required.`
                 },
@@ -110,10 +117,6 @@
                     return v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || `${propertyType} address must be valid.`
                 }
             }
-        },
-
-        components: {
-            Alert: () => import('@/components/mixins/Alert')
         },
 
         props: {
@@ -128,6 +131,7 @@
             onClickResetForm () {
                 this.$refs.form.reset()
                 this.loading = false
+                this.error = ''
                 this.$emit('onResetForm')
             },
 
@@ -149,9 +153,7 @@
                         this.saveStudentInHasura (firstname, lastname, email, password, firebase)
                      })
                      .catch(error => {
-                        this.loading = false  
-                        this.error = error
-                        toastAlertStatus('error', error) 
+                        this.errorProvider(error)
                      })
                 }
             },
@@ -174,10 +176,25 @@
                     this.onClickResetForm ()
                  })
                  .catch(error => {
-                    this.loading = false  
-                    this.error = error
-                    toastAlertStatus('error', error)
+                    this.errorProvider(error)
                  })
+            },
+
+
+            errorProvider (error) {
+                this.loading = false
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                if (errorCode) {
+                    toastAlertStatus('error', errorCode.split('/')[1])
+                    return this.error = errorCode
+                } else if (errorMessage) {
+                    toastAlertStatus('error', errorMessage.split('/')[1])
+                    return this.error = errorMessage
+                } else {
+                    toastAlertStatus('error', error.split('/')[1])
+                    return this.error = error
+                }
             }
         }
     }
