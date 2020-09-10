@@ -32,7 +32,6 @@
                 class="radius font-weight-light"
                 solo-inverted
                 flat
-                clearable
                 :type="showPass ? 'text' : 'password'"
                 :append-icon="showPass ? 'mdi-eye-off' : 'mdi-eye'"
                 @click:append="showPass = !showPass"
