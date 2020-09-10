@@ -11,11 +11,11 @@
     <v-list>
       <v-list-item>
         <v-list-item-avatar>
-          <img src="@/assets/a.png" alt="Logo" />
+          <v-img src="@/assets/mascot.svg" max-width="40px" />
         </v-list-item-avatar>
         <v-list-item-content>
-          <v-list-item-title class="title">Airclass Solution</v-list-item-title>
-          <v-list-item-subtitle>Official website</v-list-item-subtitle>
+          <v-list-item-title class="title primary--text font-weight-bold">Airclass</v-list-item-title>
+          <v-list-item-subtitle class="font-weight-light white--text">Official website</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
     </v-list> <!-- BUSINESS LOGO AND SUBTITLE -->

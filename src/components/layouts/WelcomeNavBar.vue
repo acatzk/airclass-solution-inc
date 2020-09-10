@@ -7,8 +7,8 @@
       flat
     >
       <v-toolbar-title class="d-flex">
-        <v-img src="@/assets/a.png" max-width="50px" />
-        <span class="mt-3 log-name">Airclass</span>
+        <v-img src="@/assets/mascot.svg" max-width="40px" />
+        <span class="mt-3 log-name primary--text">Airclass</span>
       </v-toolbar-title> <!-- BUSINESS LOGO -->
 
       <v-spacer />
