@@ -53,6 +53,23 @@
                 {{ item.title }}
             </v-list-item-title>
           </v-list-item-content>
+          
+        </v-list-item>
+      </v-list>
+      
+      <v-divider class="mx-3"></v-divider>
+
+      <v-list nav dense>
+        <v-list-item @click="onClickSignOut">
+          <v-list-item-icon>
+            <v-icon >mdi-logout</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>
+                Logout
+            </v-list-item-title>
+          </v-list-item-content>
         </v-list-item>
       </v-list>
 
@@ -75,8 +92,7 @@
           { title: 'My Classes', icon: 'mdi-poll', to: '/v/my-classes' },
           { title: 'Messages', icon: 'mdi-email', to: '/v/messages' },
           { title: 'Lessons', icon: 'mdi-cube', to: '/v/lessons' },
-          { title: 'Rewards', icon: 'mdi-folder-plus', to: '/v/rewards' },
-          { title: 'Logout', icon: 'mdi-logout' }
+          { title: 'Rewards', icon: 'mdi-folder-plus', to: '/v/rewards' }
         ],
         isXs: false
       }
