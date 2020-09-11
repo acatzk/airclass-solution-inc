@@ -45,7 +45,7 @@
           class="darkblue--text"
         >
           <v-list-item-icon>
-            <v-icon >{{ item.icon }}</v-icon>
+            <v-icon >{{ $route.path === item.to  ? item.icon : item.icon + '-outline' }}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
@@ -89,7 +89,7 @@
         drawer: true,
         items: [
           { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/v/dashboard' },
-          { title: 'My Classes', icon: 'mdi-poll', to: '/v/my-classes' },
+          { title: 'My Classes', icon: 'mdi-flag', to: '/v/my-classes' },
           { title: 'Messages', icon: 'mdi-email', to: '/v/messages' },
           { title: 'Lessons', icon: 'mdi-cube', to: '/v/lessons' },
           { title: 'Rewards', icon: 'mdi-folder-plus', to: '/v/rewards' }
