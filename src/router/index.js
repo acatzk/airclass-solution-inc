@@ -30,6 +30,11 @@ const routes = [
         path: 'messages',
         name: 'messages',
         component: () => import('@/components/pages/home-sections/MessageSection')
+      },
+      {
+        path: 'lessons',
+        name: 'lessons',
+        component: () => import('@/components/pages/home-sections/LessonSection')
       }
     ]
   }
