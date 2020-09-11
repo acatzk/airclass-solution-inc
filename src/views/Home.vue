@@ -4,6 +4,12 @@
         
         <home-side-bar /> <!-- HOME SIDE BAR COMPONENT -->
 
+        <v-main>
+
+            <router-view></router-view> <!-- DYNAMIC PAGES LOADED -->
+
+        </v-main>
+
     </div>
 
 </template>
