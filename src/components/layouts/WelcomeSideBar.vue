@@ -5,18 +5,12 @@
     app
     temporary
     dark
-    src="@/assets/img/bgDrawer.jpg"
+    src="@/assets/img/bgDownload.jpg"
   >
 
     <v-list>
       <v-list-item>
-        <v-list-item-avatar>
-          <v-img src="@/assets/mascot.svg" max-width="40px" />
-        </v-list-item-avatar>
-        <v-list-item-content>
-          <v-list-item-title class="title primary--text font-weight-bold">Airclass</v-list-item-title>
-          <v-list-item-subtitle class="font-weight-light white--text">Official website</v-list-item-subtitle>
-        </v-list-item-content>
+          <v-img src="@/assets/logo.svg" max-width="190" />
       </v-list-item>
     </v-list> <!-- BUSINESS LOGO AND SUBTITLE -->
 
