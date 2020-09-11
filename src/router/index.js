@@ -35,6 +35,11 @@ const routes = [
         path: 'lessons',
         name: 'lessons',
         component: () => import('@/components/pages/home-sections/LessonSection')
+      },
+      {
+        path: 'rewards',
+        name: 'rewards',
+        component: () => import('@/components/pages/home-sections/RewardSection')
       }
     ]
   }
