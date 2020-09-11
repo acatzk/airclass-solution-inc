@@ -20,6 +20,11 @@ const routes = [
         path: 'dashboard',
         name: 'dashboard',
         component: () => import('@/components/pages/home-sections/DashboardSection')
+      },
+      {
+        path: 'my-classes',
+        name: 'my-classes',
+        component: () => import('@/components/pages/home-sections/MyClassesSection')
       }
     ]
   }
