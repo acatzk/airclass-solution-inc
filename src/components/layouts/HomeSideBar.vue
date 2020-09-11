@@ -4,6 +4,7 @@
       permanent
       fixed
       :expand-on-hover="isXs ? true : false"
+      app
     >
     
      <v-list style="position: relative; top: 20px; margin: 20px 0;">
