@@ -49,7 +49,7 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title :class="$route.path === item.to ? 'font-weight-bold' : 'font-weight-light'">
+            <v-list-item-title :class="$route.path === item.to ? 'font-weight-bold' : 'font-weight-medium'">
                 {{ item.title }}
             </v-list-item-title>
           </v-list-item-content>
