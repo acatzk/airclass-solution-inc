@@ -13,13 +13,13 @@ const routes = [
   {
     path: '/v',
     name: 'home',
-    component: () => import('@/views/home/Home'),
+    component: () => import('@/views/Home'),
     meta: { requiresAuth: true },
     children: [
       {
         path: 'dashboard',
         name: 'dashboard',
-        component: () => import('@/views/home/Dashboard')
+        component: () => import('@/components/pages/home-sections/DashboardSection')
       }
     ]
   }
