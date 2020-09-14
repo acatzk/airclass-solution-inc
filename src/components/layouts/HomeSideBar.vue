@@ -88,10 +88,9 @@
         drawer: true,
         items: [
           { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/v/dashboard' },
-          { title: 'My Classes', icon: 'mdi-flag', to: '/v/my-classes' },
-          { title: 'Messages', icon: 'mdi-email', to: '/v/messages' },
+          { title: 'Schedules', icon: 'mdi-flag', to: '/v/schedules' },
           { title: 'Lessons', icon: 'mdi-cube', to: '/v/lessons' },
-          { title: 'Rewards', icon: 'mdi-folder-plus', to: '/v/rewards' }
+          { title: 'Settings', icon: 'mdi-folder-plus', to: '/v/settings' }
         ],
         isXs: false
       }
