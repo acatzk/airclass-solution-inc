@@ -32,9 +32,9 @@ const routes = [
         component: () => import('@/components/pages/home-sections/LessonSection')
       },
       {
-        path: 'rewards',
-        name: 'rewards',
-        component: () => import('@/components/pages/home-sections/RewardSection')
+        path: 'settings',
+        name: 'settings',
+        component: () => import('@/components/pages/home-sections/SettingSection')
       }
     ]
   }
