@@ -88,9 +88,9 @@
         drawer: true,
         items: [
           { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/v/dashboard' },
-          { title: 'Schedules', icon: 'mdi-flag', to: '/v/schedules' },
-          { title: 'Lessons', icon: 'mdi-cube', to: '/v/lessons' },
-          { title: 'Settings', icon: 'mdi-folder-plus', to: '/v/settings' }
+          { title: 'Schedules', icon: 'mdi-calendar', to: '/v/schedules' },
+          { title: 'Lessons', icon: 'mdi-book-open', to: '/v/lessons' },
+          { title: 'Settings', icon: 'mdi-settings', to: '/v/settings' }
         ],
         isXs: false
       }
