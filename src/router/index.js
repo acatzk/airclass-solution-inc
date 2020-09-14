@@ -22,14 +22,9 @@ const routes = [
         component: () => import('@/components/pages/home-sections/DashboardSection')
       },
       {
-        path: 'my-classes',
-        name: 'my-classes',
-        component: () => import('@/components/pages/home-sections/MyClassesSection')
-      },
-      {
-        path: 'messages',
-        name: 'messages',
-        component: () => import('@/components/pages/home-sections/MessageSection')
+        path: 'schedules',
+        name: 'schedules',
+        component: () => import('@/components/pages/home-sections/ScheduleSection')
       },
       {
         path: 'lessons',
