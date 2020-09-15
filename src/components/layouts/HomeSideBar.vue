@@ -7,6 +7,8 @@
       app
     >
     
+
+     <!-- BUSINESS LOGO AND SUBTITLE -->
      <v-list style="position: relative; top: 20px; margin: 20px 0;">
         <v-list-item>
             <v-list-item-icon>
@@ -18,10 +20,12 @@
                 </v-list-item-title>
             </v-list-item-content>
         </v-list-item>
-     </v-list> <!-- BUSINESS LOGO AND SUBTITLE -->
+     </v-list>
 
-      <v-list nav>
-        <v-list-item link>
+
+      <!-- STUDENT PROFILE LINK -->
+      <v-list>
+        <v-list-item link class="profile-section">
             <v-list-item-icon>
                 <v-img 
                     src="https://randomuser.me/api/portraits/men/85.jpg" 
@@ -36,28 +40,68 @@
         </v-list-item>
       </v-list>
 
+
+      <!-- ACTUAL NAVIGATION LINKS -->
       <v-list nav dense>
-        <v-list-item
+        
+        <div 
           v-for="item in items"
           :key="item.title"
-          link
-          :to="item.to"
         >
-          <v-list-item-icon>
-            <v-icon :class="$route.path === item.to ? 'darkblue--text' : 'gray--text'">{{ $route.path === item.to  ? item.icon : item.icon + '-outline' }}</v-icon>
-          </v-list-item-icon>
+          <v-list-item
+            link
+            :to="item.to"
+            v-if="!item.subLinks"
+          >
+            <v-list-item-icon>
+              <v-icon :class="$route.path === item.to ? 'darkblue--text' : 'gray--text'">{{ $route.path === item.to  ? item.icon : item.icon + '-outline' }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title :class="$route.path === item.to ? 'darkblue--text font-weight-bold' : 'font-weight-medium gray--text'">
+                  {{ item.title }}
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
 
-          <v-list-item-content>
-            <v-list-item-title :class="$route.path === item.to ? 'darkblue--text font-weight-bold' : 'font-weight-medium gray--text'">
-                {{ item.title }}
-            </v-list-item-title>
-          </v-list-item-content>
-          
-        </v-list-item>
+          <v-list-group
+              v-else
+              :key="item.title"
+              no-action
+              :prepend-icon="item.icon"
+              :value="false"
+              class="gray--text"
+          >
+              <template v-slot:activator>
+                <v-list-item-title>
+                  {{ item.title }}
+                </v-list-item-title>
+              </template>
+
+              <v-list-item
+                  v-for="sublink in item.subLinks"
+                  :to="sublink.to"
+                  :key="sublink.title"
+              >
+                  <v-list-item-icon>
+                    <v-icon :class="$route.path === sublink.to ? 'darkblue--text' : 'gray--text'">
+                      {{  $route.path === sublink.to  ? sublink.icon : sublink.icon + '-outline' }}
+                    </v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title :class="$route.path === sublink.to ? 'darkblue--text font-weight-bold' : 'font-weight-medium gray--text'">
+                    {{ sublink.title }}
+                  </v-list-item-title>
+
+              </v-list-item>
+
+          </v-list-group>
+        </div>
+
       </v-list>
       
       <v-divider class="mx-3"></v-divider>
 
+
+      <!-- SIGN OUT BUTTON LINK -->
       <v-list nav dense>
         <v-list-item @click="onClickSignOut">
           <v-list-item-icon>
@@ -90,7 +134,22 @@
           { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/v/dashboard' },
           { title: 'Schedules', icon: 'mdi-calendar', to: '/v/schedules' },
           { title: 'Lessons', icon: 'mdi-book-open', to: '/v/lessons' },
-          { title: 'Settings', icon: 'mdi-settings', to: '/v/settings' }
+          { 
+            title: 'Settings', 
+            icon: 'mdi-settings', 
+            subLinks : [
+              {
+                  title : 'General Setting',
+                  to    : '/v/settings',
+                  icon  : 'mdi-settings'
+              },
+              {
+                  title : 'Profile',
+                  to    : `/v/profile/${auth.currentUser.uid}`,
+                  icon  : 'mdi-account'
+              }
+            ]
+          }
         ],
         isXs: false
       }
@@ -131,5 +190,8 @@
 <style scoped>
 .active {
     font-weight: bold;
+}
+.profile-section {
+  border-left: 4px solid #14C6FF;
 }
 </style>
