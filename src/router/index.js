@@ -35,6 +35,11 @@ const routes = [
         path: 'settings',
         name: 'settings',
         component: () => import('@/components/pages/home-sections/SettingSection')
+      },
+      {
+        path: 'profile/:id',
+        name: 'profile',
+        component: () => import('@/components/pages/home-sections/ProfileSection')
       }
     ]
   }
