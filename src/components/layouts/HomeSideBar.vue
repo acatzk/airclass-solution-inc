@@ -72,7 +72,7 @@
               class="gray--text"
           >
               <template v-slot:activator>
-                <v-list-item-title>
+                <v-list-item-title class="gray--text">
                   {{ item.title }}
                 </v-list-item-title>
               </template>
