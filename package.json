@@ -19,6 +19,7 @@
     "firebase": "^4.8.1",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.11.0",
+    "nprogress": "^0.2.0",
     "roboto-fontface": "*",
     "subscriptions-transport-ws": "^0.9.18",
     "sweetalert2": "^9.17.2",
