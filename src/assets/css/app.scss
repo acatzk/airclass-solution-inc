@@ -26,3 +26,7 @@ body, html {
   border-radius: 8px;       /* roundness of the scroll thumb */
   border: 3px solid #fff;  /* creates padding around scroll thumb */
 }
+
+#nprogress .bar {
+  background: #14C6FF !important;
+}
