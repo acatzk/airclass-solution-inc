@@ -168,10 +168,7 @@
       },
 
       onClickSignOut () {
-          auth
-          .signOut()
-          .then(() => this.$router.push({ name: 'welcome' }))
-          .catch(err => toastAlertStatus('error', err))
+        this.$emit('logout')
       },
 
       getStudentProfile (student) {

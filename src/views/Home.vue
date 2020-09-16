@@ -5,6 +5,7 @@
         <home-side-bar
             :links="sidebarNavigations"
             :students="students"
+            @logout="onSignOut"
         >
         </home-side-bar> <!-- HOME SIDE BAR COMPONENT -->
 
@@ -63,6 +64,15 @@
         
         components: {
             HomeSideBar: () => import('@/components/layouts/HomeSideBar')
+        },
+
+        methods: {
+            onSignOut () {
+                auth
+                .signOut()
+                .then(() => this.$router.push({ name: 'welcome' }))
+                .catch(err => toastAlertStatus('error', err))
+            }
         },
 
         apollo: {
