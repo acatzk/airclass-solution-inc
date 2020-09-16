@@ -44,16 +44,16 @@
                         title: 'Settings', 
                         icon: 'mdi-settings', 
                         subLinks : [
-                        {
-                            title : 'General Setting',
-                            to    : '/v/settings',
-                            icon  : 'mdi-settings'
-                        },
-                        {
-                            title : 'Profile',
-                            to    : `/v/profile/${auth.currentUser.uid}`,
-                            icon  : 'mdi-account'
-                        }
+                            {
+                                title : 'General Setting',
+                                to    : '/v/settings',
+                                icon  : 'mdi-settings'
+                            },
+                            {
+                                title : 'Profile',
+                                to    : `/v/profile/${auth.currentUser.uid}`,
+                                icon  : 'mdi-account'
+                            }
                         ]
                     }
                 ],
