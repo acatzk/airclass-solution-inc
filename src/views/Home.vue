@@ -27,6 +27,8 @@
 
     import { toastAlertStatus } from '@/utils'
 
+    import { GET_STUDENT_QUERY } from '@/graphql/queries'
+
     export default {
         name: 'home',
 
@@ -63,16 +65,7 @@
 
         apollo: {
             students: {
-                query: gql`
-                    query studentFullnameQuery($firebase_id: String!) {
-                        students(where: {firebase_id: {_eq: $firebase_id}}) {
-                            id
-                            firstname
-                            lastname
-                            profile_url
-                        }
-                    }
-                `,
+                query: GET_STUDENT_QUERY,
                 variables () {
                     return {
                         firebase_id: auth.currentUser.uid
