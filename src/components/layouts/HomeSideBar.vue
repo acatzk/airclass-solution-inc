@@ -176,7 +176,7 @@
 
       getStudentProfile (student) {
         if (student.profile_url === null || student.profile_url === '') {
-          return 'https://cdn2.vectorstock.com/i/thumb-large/23/81/default-avatar-profile-icon-vector-18942381.jpg'
+          return 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQzFk3tjuRRU5Hg5ARTScD-fgouLkRKzBQr7w&usqp=CAU'
         } else {
           return student.profile_url
         }
