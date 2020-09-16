@@ -39,7 +39,7 @@
           v-for="(student, index) in students" :key="index"
           link
           class="profile-section"
-          :to="`/v/profile/${student.id}`"
+          :to="`/v/profile/${student.firebase_id}`"
         >
             <v-list-item-icon>
                 <v-img 
