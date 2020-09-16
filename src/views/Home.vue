@@ -29,6 +29,8 @@
 
     import { GET_STUDENT_QUERY } from '@/graphql/queries'
 
+    import { GET_STUDENT_SUBSCRIPTION } from '@/graphql/subscriptions'
+
     export default {
         name: 'home',
 
@@ -72,16 +74,7 @@
                     }
                 },
                 subscribeToMore: {
-                    document: gql`
-                        subscription studentFullnameSubscription($firebase_id: String!) {
-                            students(where: {firebase_id: {_eq: $firebase_id}}) {
-                                id
-                                firstname
-                                lastname
-                                profile_url
-                            }
-                        }
-                    `,
+                    document: GET_STUDENT_SUBSCRIPTION,
                     variables () {
                         return {
                             firebase_id: auth.currentUser.uid
