@@ -45,6 +45,7 @@
                 <v-img 
                     :src="getStudentProfile(student)" 
                     class="rounded-lg"
+                    :lazy-src="getStudentProfile(student)"
                     max-width="35"
                 ></v-img>
             </v-list-item-icon>
@@ -62,7 +63,7 @@
       <v-list nav dense>
         
         <div 
-          v-for="item in items"
+          v-for="item in links"
           :key="item.title"
         >
           <v-list-item
@@ -139,60 +140,24 @@
 
 <script>
 
-  import { auth } from '@/services'
-
-  import gql from 'graphql-tag'
-
-  import { toastAlertStatus } from '@/utils'
-
-  const STUDENT_FULLNAME_QUERY = gql`
-    query studentFullnameQuery($firebase_id: String!) {
-      students(where: {firebase_id: {_eq: $firebase_id}}) {
-        id
-        firstname
-        lastname
-        profile_url
-      }
-    }
-  `
-
   export default {
-    data () {
-      return {
-        drawer: true,
-        items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard', to: '/v/dashboard' },
-          { title: 'Schedules', icon: 'mdi-calendar', to: '/v/schedules' },
-          { title: 'Lessons', icon: 'mdi-book-open', to: '/v/lessons' },
-          { 
-            title: 'Settings', 
-            icon: 'mdi-settings', 
-            subLinks : [
-              {
-                  title : 'General Setting',
-                  to    : '/v/settings',
-                  icon  : 'mdi-settings'
-              },
-              {
-                  title : 'Profile',
-                  to    : `/v/profile/${auth.currentUser.uid}`,
-                  icon  : 'mdi-account'
-              }
-            ]
-          }
-        ],
-        isXs: false
+    name: 'home-side-bar', 
+
+    props: {
+      links: {
+        type: Array,
+        required: true
+      },
+      students: {
+        type: Array,
+        required: true
       }
     },
 
-    apollo: {
-      students: {
-        query: STUDENT_FULLNAME_QUERY,
-        variables () {
-          return {
-            firebase_id: auth.currentUser.uid
-          }
-        }
+    data () {
+      return {
+        drawer: true,
+        isXs: false
       }
     },
 
@@ -220,7 +185,6 @@
     },
 
     watch: {
-
       isXs (value) {
           if (!value) {
               if (this.drawer) {
@@ -228,9 +192,7 @@
               }
           }
       }
-
     },
-
 
     mounted() {
 
@@ -238,8 +200,8 @@
       window.addEventListener("resize", this.onResize, { 
           passive: true 
       })
-
     }
+
   }
 </script>
 
