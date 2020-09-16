@@ -25,16 +25,33 @@
 
       <!-- STUDENT PROFILE LINK -->
       <v-list>
-        <v-list-item link class="profile-section">
+
+
+          <v-skeleton-loader
+            ref="skeleton"
+            type="list-item-avatar-two-line"
+            class="mx-auto"
+            v-if="$apollo.loading"
+          ></v-skeleton-loader> <!-- ADDED SKELETON LOADING FOR FETCHING API -->
+
+        <v-list-item 
+          v-else
+          v-for="(student, index) in students" :key="index"
+          link
+          class="profile-section"
+          :to="`/v/profile/${student.id}`"
+        >
             <v-list-item-icon>
                 <v-img 
-                    src="https://randomuser.me/api/portraits/men/85.jpg" 
+                    :src="getStudentProfile(student)" 
                     class="rounded-lg"
                     max-width="35"
                 ></v-img>
             </v-list-item-icon>
             <v-list-item-content>
-                <v-list-item-title class="font-weight-bold">Resamae R.</v-list-item-title>
+                <v-list-item-title class="font-weight-bold text-capitalize">
+                  {{ `${student.firstname} ${student.lastname} ` }}
+                </v-list-item-title>
                 <v-list-item-subtitle class="lightgray--text font-weight-light">Student</v-list-item-subtitle>
             </v-list-item-content>
         </v-list-item>
@@ -124,7 +141,20 @@
 
   import { auth } from '@/services'
 
+  import gql from 'graphql-tag'
+
   import { toastAlertStatus } from '@/utils'
+
+  const STUDENT_FULLNAME_QUERY = gql`
+    query studentFullnameQuery($firebase_id: String!) {
+      students(where: {firebase_id: {_eq: $firebase_id}}) {
+        id
+        firstname
+        lastname
+        profile_url
+      }
+    }
+  `
 
   export default {
     data () {
@@ -155,6 +185,17 @@
       }
     },
 
+    apollo: {
+      students: {
+        query: STUDENT_FULLNAME_QUERY,
+        variables () {
+          return {
+            firebase_id: auth.currentUser.uid
+          }
+        }
+      }
+    },
+
     methods: {
         
       onResize () {
@@ -166,10 +207,20 @@
           .signOut()
           .then(() => this.$router.push({ name: 'welcome' }))
           .catch(err => toastAlertStatus('error', err))
+      },
+
+      getStudentProfile (student) {
+        if (student.profile_url === null || student.profile_url === '') {
+          return 'https://cdn2.vectorstock.com/i/thumb-large/23/81/default-avatar-profile-icon-vector-18942381.jpg'
+        } else {
+          return student.profile_url
+        }
       }
 
     },
+
     watch: {
+
       isXs (value) {
           if (!value) {
               if (this.drawer) {
@@ -177,12 +228,17 @@
               }
           }
       }
+
     },
+
+
     mounted() {
+
       this.onResize()
       window.addEventListener("resize", this.onResize, { 
           passive: true 
       })
+
     }
   }
 </script>
