@@ -25,6 +25,9 @@
                                     </v-img>
                                 </v-avatar>
                             </v-badge>
+                            <v-card-title class="avatar-name font-weight-bold">
+                                Joshua Galit
+                            </v-card-title>
                         </v-col>
                     </v-row>
                 </v-col>
@@ -44,5 +47,11 @@
     bottom: 110px;
     right: 20px;
     border: 4px solid #fff;
+}
+.avatar-name {
+    position: relative;
+    bottom: 185px;
+    left: 160px;
+    font-size: 1.9rem;
 }
 </style>
