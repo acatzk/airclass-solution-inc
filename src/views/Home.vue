@@ -78,6 +78,32 @@
                         firebase_id: auth.currentUser.uid
                     }
                 },
+                subscribeToMore: {
+                    document: gql`
+                        subscription studentFullnameSubscription($firebase_id: String!) {
+                            students(where: {firebase_id: {_eq: $firebase_id}}) {
+                                id
+                                firstname
+                                lastname
+                                profile_url
+                            }
+                        }
+                    `,
+                    variables () {
+                        return {
+                            firebase_id: auth.currentUser.uid
+                        }
+                    },
+                    updateQuery(previousResult, { subscriptionData }) {
+                        if (previousResult) {
+                            return {
+                                students: [
+                                    ...subscriptionData.data.students
+                                ]
+                            }
+                        }
+                    }
+                },
                 result ({ data}) {
                     this.students = data.students
                 }
