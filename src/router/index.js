@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { auth } from '@/services'
 
+import './../../node_modules/nprogress/nprogress.css';
+
 Vue.use(VueRouter);
 
 const routes = [
