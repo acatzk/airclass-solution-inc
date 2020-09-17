@@ -6,30 +6,47 @@
                 <v-col cols="10">
                     <v-row align="center" justify="center">
                         <v-col cols="12">
-                            <v-badge
-                                bordered
-                                color="success"
-                                dot
-                                offset-x="46"
-                                offset-y="20"
-                            >
-                                <v-avatar 
-                                    size="150" 
-                                    class="avatar-profile"
+                            <v-row>
+                                <v-badge
+                                    bordered
+                                    color="success"
+                                    dot
+                                    offset-x="20"
+                                    offset-y="120"
                                 >
-                                
-                                    <v-img
-                                        src="https://pbs.twimg.com/profile_images/1031140303791579136/TU9GctxI_400x400.jpg"
-                                        lazy-src="https://pbs.twimg.com/profile_images/1031140303791579136/TU9GctxI_400x400.jpg"
+                                    <v-avatar 
+                                        size="150" 
+                                        class="avatar-profile"
                                     >
-                                    </v-img>
-                                </v-avatar>
-                            </v-badge>
-                            <v-card-title class="avatar-name font-weight-bold">
-                                Joshua Galit
-                            </v-card-title>
+                                    
+                                        <v-img
+                                            src="https://pbs.twimg.com/profile_images/1031140303791579136/TU9GctxI_400x400.jpg"
+                                            lazy-src="https://pbs.twimg.com/profile_images/1031140303791579136/TU9GctxI_400x400.jpg"
+                                        >
+                                        </v-img>
+                                    </v-avatar>
+                                </v-badge>
+                                <h1 class="font-weight-bold avatar-name darkblue--text d-flex justify-center align-center mx-5 text-center">
+                                    Joshua Galit
+                                </h1>
+                            </v-row>
                         </v-col>
                     </v-row>
+
+
+                    <v-row align="center" justify="center">
+                        <v-col cols="12" md="6">
+                            <div class="heading-title darkblue--text font-weight-medium">
+                                Personal Details
+                            </div>
+                        </v-col>
+                        <v-col cols="12" md="6">
+                            <div class="heading-title darkblue--text font-weight-medium">
+                                Academic Details
+                            </div>
+                        </v-col>    
+                    </v-row>
+
                 </v-col>
             </v-row>
         </v-container>
@@ -39,19 +56,15 @@
 <style scoped>
 .cover-photo {
     width: 100%;
-    min-height: 30vh;
+    min-height: 15vh;
     background: #14C6FF;
+    position: absolute;
 }
 .avatar-profile {
-    position: relative;
-    bottom: 110px;
-    right: 20px;
     border: 4px solid #fff;
 }
 .avatar-name {
+    font-size: 1.5rem;
     position: relative;
-    bottom: 185px;
-    left: 160px;
-    font-size: 1.9rem;
 }
 </style>
