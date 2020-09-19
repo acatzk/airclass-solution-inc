@@ -91,14 +91,14 @@
                 query: GET_STUDENT_QUERY,
                 variables () {
                     return {
-                        firebase_id: auth.currentUser.uid
+                        firebase_id: auth ? auth.currentUser.uid : undefined
                     }
                 },
                 subscribeToMore: {
                     document: GET_STUDENT_SUBSCRIPTION,
                     variables () {
                         return {
-                            firebase_id: auth.currentUser.uid
+                            firebase_id: auth ? auth.currentUser.uid : undefined
                         }
                     },
                     updateQuery(previousResult, { subscriptionData }) {
