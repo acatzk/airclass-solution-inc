@@ -2,18 +2,27 @@
 
     <div class="home">
         
+        
         <home-side-bar
             :links="sidebarNavigations"
             :students="students"
             @logout="onSignOut"
         >
+            <template  
+                v-slot:general-skekeleton-loader
+            >
+                <v-skeleton-loader
+                    :type="type"
+                ></v-skeleton-loader> <!-- ADDED SKELETON LOADING FOR FETCHING API -->
+            </template>
+
         </home-side-bar> <!-- HOME SIDE BAR COMPONENT -->
 
-        <v-main>
+        <home-main-bar>
 
             <router-view></router-view> <!-- DYNAMIC PAGES LOADED -->
 
-        </v-main>
+        </home-main-bar>
 
     </div>
 
@@ -58,12 +67,14 @@
                         ]
                     }
                 ],
-                students: []
+                students: [],
+                type: 'image, list-item-avatar-two-line, list-item, list-item, list-item, list-item, list-item'
             }
         },
         
         components: {
-            HomeSideBar: () => import('@/components/layouts/HomeSideBar')
+            HomeSideBar: () => import('@/components/layouts/HomeSideBar'),
+            HomeMainBar: () => import('@/components/layouts/WelcomeMainBar')
         },
 
         methods: {

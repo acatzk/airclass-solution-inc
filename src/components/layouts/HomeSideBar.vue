@@ -1,15 +1,21 @@
 <template>
-    <v-navigation-drawer
-      v-model="drawer"
-      permanent
-      fixed
-      :expand-on-hover="isXs ? true : false"
-      app
+  <v-navigation-drawer
+    v-model="drawer"
+    permanent
+    fixed
+    :expand-on-hover="isXs ? true : false"
+    app
+  >
+  
+    <slot
+      name="general-skekeleton-loader"
+      v-if="$apollo.loading"
     >
-    
+    </slot>
 
-     <!-- BUSINESS LOGO AND SUBTITLE -->
-     <v-list style="position: relative; top: 20px; margin: 20px 0;">
+    <div v-else>
+      <!-- BUSINESS LOGO AND SUBTITLE -->
+      <v-list style="position: relative; top: 20px; margin: 20px 0;">
         <v-list-item>
             <v-list-item-icon>
                 <v-img src="@/assets/mascot.svg" max-width="39"/>
@@ -20,22 +26,13 @@
                 </v-list-item-title>
             </v-list-item-content>
         </v-list-item>
-     </v-list>
+      </v-list>
 
 
       <!-- STUDENT PROFILE LINK -->
       <v-list>
 
-
-          <v-skeleton-loader
-            ref="skeleton"
-            type="list-item-avatar-two-line"
-            class="mx-auto"
-            v-if="$apollo.loading"
-          ></v-skeleton-loader> <!-- ADDED SKELETON LOADING FOR FETCHING API -->
-
         <v-list-item 
-          v-else
           v-for="(student, index) in students" :key="index"
           link
           class="profile-section"
@@ -133,8 +130,9 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+    </div>
 
-    </v-navigation-drawer>
+  </v-navigation-drawer>
     
 </template>
 
